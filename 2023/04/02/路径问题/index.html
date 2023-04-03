@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"beyouwanted.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1、路径写法（三种）\  正斜杠   1Srting str &#x3D; &quot;D:\\SoftWare\\a.txt&quot;;  &#x2F; 反斜杠（推荐） 1Srting str &#x3D; &quot;D:&#x2F;SoftWare&#x2F;a.txt&quot;;  文件分割符 1String str &#x3D; &quot;D:&quot;+File.separator+&quot;SoftWare&quot;+F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="路径问题">
+<meta property="og:url" content="http://beyouwanted.github.io/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、路径写法（三种）\  正斜杠   1Srting str &#x3D; &quot;D:\\SoftWare\\a.txt&quot;;  &#x2F; 反斜杠（推荐） 1Srting str &#x3D; &quot;D:&#x2F;SoftWare&#x2F;a.txt&quot;;  文件分割符 1String str &#x3D; &quot;D:&quot;+File.separator+&quot;SoftWare&quot;+F">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-02T05:51:09.000Z">
+<meta property="article:modified_time" content="2023-04-02T14:04:28.864Z">
+<meta property="article:author" content="YangHaiyang">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://beyouwanted.github.io/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://beyouwanted.github.io/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/","path":"2023/04/02/路径问题/","title":"路径问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>路径问题 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E8%B7%AF%E5%BE%84%E5%86%99%E6%B3%95%EF%BC%88%E4%B8%89%E7%A7%8D%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">1、路径写法（三种）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-number">2.</span> <span class="nav-text">2、绝对路径和相对路径</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1%E3%80%81%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-number">2.1.</span> <span class="nav-text">2.1、绝对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2%E3%80%81%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84"><span class="nav-number">2.2.</span> <span class="nav-text">2.2、相对路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1%E3%80%81%E8%8E%B7%E5%8F%96%E5%B7%A5%E4%BD%9C%E7%9B%AE%E5%BD%95"><span class="nav-number">2.3.</span> <span class="nav-text">2.2.1、获取工作目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2%E3%80%81%E7%B1%BB%E8%B7%AF%E5%BE%84"><span class="nav-number">2.4.</span> <span class="nav-text">2.2.2、类路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%AF%BB%E5%8F%96-resources-%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">3、读取 resources 目录下的文件方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 方式一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 方式二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-3-%E6%96%B9%E5%BC%8F%E4%B8%89"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 方式三</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-4-%E6%96%B9%E5%BC%8F%E5%9B%9B"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 方式四</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-5-%E6%96%B9%E5%BC%8F%E4%BA%94"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 方式五</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-6-%E6%96%B9%E5%BC%8F%E5%85%AD"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 方式六</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-7-%E6%96%B9%E5%BC%8F%E4%B8%83"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 方式七</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YangHaiyang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="路径问题 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          路径问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-02 13:51:09 / Modified: 22:04:28" itemprop="dateCreated datePublished" datetime="2023-04-02T13:51:09+08:00">2023-04-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="1、路径写法（三种）"><a href="#1、路径写法（三种）" class="headerlink" title="1、路径写法（三种）"></a>1、路径写法（三种）</h3><p>\  正斜杠  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Srting</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:\\SoftWare\\a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F; 反斜杠（推荐）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Srting</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:/SoftWare/a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>文件分割符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:&quot;</span>+File.separator+<span class="string">&quot;SoftWare&quot;</span>+File.separator+<span class="string">&quot;a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、绝对路径和相对路径"><a href="#2、绝对路径和相对路径" class="headerlink" title="2、绝对路径和相对路径"></a>2、绝对路径和相对路径</h3><h4 id="2-1、绝对路径"><a href="#2-1、绝对路径" class="headerlink" title="2.1、绝对路径"></a>2.1、绝对路径</h4><p>从盘符开始</p>
+<h4 id="2-2、相对路径"><a href="#2-2、相对路径" class="headerlink" title="2.2、相对路径"></a>2.2、相对路径</h4><p>一般定位模块中的文件的，相对到工程下。    默认直接到当前工程下的目录寻找文件</p>
+<h4 id="2-2-1、获取工作目录"><a href="#2-2-1、获取工作目录" class="headerlink" title="2.2.1、获取工作目录"></a>2.2.1、获取工作目录</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.getProperty(<span class="string">&quot;user.dir&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：D:\XYSK_Project\xysk-common-data</p>
+<h4 id="2-2-2、类路径"><a href="#2-2-2、类路径" class="headerlink" title="2.2.2、类路径"></a>2.2.2、类路径</h4><p>类路径也是一种特殊的相对路径，只不过它相对的是class文件。</p>
+<p>maven管理的项目，默认情况下resource目录下的文件会被放置类路径下。</p>
+<p>通过类加载器来加载提供的api加载文件</p>
+<p>ClassPathDemo.class.getClassLoader().getResource(“hello.txt”);</p>
+<h3 id="3、读取-resources-目录下的文件方式"><a href="#3、读取-resources-目录下的文件方式" class="headerlink" title="3、读取 resources 目录下的文件方式"></a>3、读取 resources 目录下的文件方式</h3><p>对象.getclass()、类.class和class.forName()得到的字节码文件对象是同一个</p>
+<h4 id="3-1-方式一"><a href="#3-1-方式一" class="headerlink" title="3.1 方式一"></a>3.1 方式一</h4><p>主要核心方法是使用<code>getResource</code>和<code>getPath</code>方法，这里的<code>getResource(&quot;&quot;)</code>里面是空字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function1</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;&quot;</span>).getPath();<span class="comment">//注意getResource(&quot;&quot;)里面是空字符串</span></span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> path + <span class="string">&quot;china_region_info/a.txt&quot;</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(s);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-方式二"><a href="#3-2-方式二" class="headerlink" title="3.2 方式二"></a>3.2 方式二</h4><p>主要核心方法是使用<code>getResource</code>和<code>getPath</code>方法，直接通过<code>getResource(fileName)</code>方法获取文件路径，注意如果是路径中带有中文一定要使用<code>URLDecoder.decode</code>解码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function2</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;china_region_info/a.txt&quot;</span>).getPath();</span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> URLDecoder.decode(path, <span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//如果路径中带有中文会被URLEncoder,因此这里需要解码</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-方式三"><a href="#3-3-方式三" class="headerlink" title="3.3 方式三"></a>3.3 方式三</h4><p>直接通过<code>文件名+getFile()</code>来获取文件。如果是文件路径的话<code>getFile</code>和<code>getPath</code>效果是一样的，如果是URL路径的话<code>getPath</code>是带有参数的路径。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function2</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;china_region_info/a.txt&quot;</span>).getFile();</span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> URLDecoder.decode(path, <span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//如果路径中带有中文会被URLEncoder,因此这里需要解码</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-方式四"><a href="#3-4-方式四" class="headerlink" title="3.4 方式四"></a>3.4 方式四</h4><p>直接使用<code>getResourceAsStream</code>方法获取流，上面的几种方式都需要获取文件路径，但是在SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> Test.class.getClassLoader().getResourceAsStream(<span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-方式五"><a href="#3-5-方式五" class="headerlink" title="3.5 方式五"></a>3.5 方式五</h4><p>主要也是使用<code>getResourceAsStream</code>方法获取流，不使用<code>getClassLoader</code>可以使用<code>getResourceAsStream(&quot;/配置测试.txt&quot;)</code>直接从<code>resources</code>根路径下获取，SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> Test.class.getResourceAsStream(<span class="string">&quot;/&quot;</span> + <span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-6-方式六"><a href="#3-6-方式六" class="headerlink" title="3.6 方式六"></a>3.6 方式六</h4><p>通过<code>ClassPathResource</code>类获取文件流，SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ClassPathResource</span> <span class="variable">classPathResource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathResource</span>(<span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> classPathResource.getInputStream();</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-7-方式七"><a href="#3-7-方式七" class="headerlink" title="3.7 方式七"></a>3.7 方式七</h4><p>通过绝对路径获取项目中文件的位置，只是本地绝对路径，不能用于服务器获取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function4</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">rootPath</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;user.dir&quot;</span>);<span class="comment">//D:\XYSK_Project\xysk-common-data</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> rootPath + <span class="string">&quot;/src/main/resources/china_region_info/a.txt&quot;</span>;<span class="comment">//D:\XYSK_Project\xysk-common-data/src/main/resources/china_region_info/a.txt</span></span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/01/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/" rel="prev" title="IDEA快捷键">
+                  <i class="fa fa-chevron-left"></i> IDEA快捷键
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/02/String%E7%9A%84%E7%94%A8%E6%B3%95/" rel="next" title="String的用法">
+                  String的用法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YangHaiyang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

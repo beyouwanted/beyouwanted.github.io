@@ -112,7 +112,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -134,6 +134,268 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">单例模式</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-02 22:23:27 / Modified: 23:24:13" itemprop="dateCreated datePublished" datetime="2023-04-02T22:23:27+08:00">2023-04-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="1、单例模式"><a href="#1、单例模式" class="headerlink" title="1、单例模式"></a>1、单例模式</h2><p>概念：<br>　　java中<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F&spm=1001.2101.3001.7020">单例模式</a>是一种常见的设计模式，单例模式的写法有好几种，这里主要介绍三种：懒汉式单例、饿汉式单例。<br>　　单例模式有以下特点：<br>　　1、单例类只能有一个实例。<br>　　2、单例类必须自己创建自己的唯一实例。<br>　　3、单例类必须给所有其他对象提供这一实例。</p>
+<p>一、懒汉式单例</p>
+<p>&#x2F;&#x2F;懒汉式单例类.在第一次调用的时候实例化自己<br>public class Singleton {<br>    private Singleton() {}<br>    private static Singleton single&#x3D;null;<br>    &#x2F;&#x2F;静态工厂方法<br>    public static Singleton getInstance() {<br>         if (single &#x3D;&#x3D; null) {<br>             single &#x3D; new Singleton();<br>         }<br>        return single;<br>    }<br>}</p>
+<p>实现线程安全，有以下三种方式</p>
+<p>1、在getInstance方法上加同步</p>
+<p>public static synchronized Singleton getInstance() {<br>         if (single &#x3D;&#x3D; null) {<br>             single &#x3D; new Singleton();<br>         }<br>        return single;<br>}</p>
+<p>2、双重检查锁定</p>
+<p>public static Singleton getInstance() {<br>        if (singleton &#x3D;&#x3D; null) {<br>            synchronized (Singleton.class) {<br>               if (singleton &#x3D;&#x3D; null) {<br>                  singleton &#x3D; new Singleton();<br>               }<br>            }<br>        }<br>        return singleton;<br>    }</p>
+<p>3、静态内部类</p>
+<p>public class Singleton {<br>    private static class LazyHolder {<br>       private static final Singleton INSTANCE &#x3D; new Singleton();<br>    }<br>    private Singleton (){}<br>    public static final Singleton getInstance() {<br>       return LazyHolder.INSTANCE;<br>    }<br>}  </p>
+<p>这种比上面1、2都好一些，既实现了线程安全，又避免了同步带来的性能影响。</p>
+<p>二、饿汉式单例</p>
+<p>&#x2F;&#x2F;饿汉式单例类.在类初始化时，已经自行实例化<br>public class Singleton1 {<br>    private Singleton1() {}<br>    private static final Singleton1 single &#x3D; new Singleton1();<br>    &#x2F;&#x2F;静态工厂方法<br>    public static Singleton1 getInstance() {<br>        return single;<br>    }<br>}</p>
+<p>饿汉式在类创建的同时就已经创建好一个静态的对象供系统使用，以后不再改变，所以天生是线程安全的。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/02/String%E7%9A%84%E7%94%A8%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/02/String%E7%9A%84%E7%94%A8%E6%B3%95/" class="post-title-link" itemprop="url">String的用法</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-02 22:06:13 / Modified: 23:24:20" itemprop="dateCreated datePublished" datetime="2023-04-02T22:06:13+08:00">2023-04-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、isEmpty()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line">System.out.println(s.isEmpty());<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/02/%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">路径问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-02 13:51:09 / Modified: 22:04:28" itemprop="dateCreated datePublished" datetime="2023-04-02T13:51:09+08:00">2023-04-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1、路径写法（三种）"><a href="#1、路径写法（三种）" class="headerlink" title="1、路径写法（三种）"></a>1、路径写法（三种）</h3><p>\  正斜杠  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Srting</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:\\SoftWare\\a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F; 反斜杠（推荐）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Srting</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:/SoftWare/a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>文件分割符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;D:&quot;</span>+File.separator+<span class="string">&quot;SoftWare&quot;</span>+File.separator+<span class="string">&quot;a.txt&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、绝对路径和相对路径"><a href="#2、绝对路径和相对路径" class="headerlink" title="2、绝对路径和相对路径"></a>2、绝对路径和相对路径</h3><h4 id="2-1、绝对路径"><a href="#2-1、绝对路径" class="headerlink" title="2.1、绝对路径"></a>2.1、绝对路径</h4><p>从盘符开始</p>
+<h4 id="2-2、相对路径"><a href="#2-2、相对路径" class="headerlink" title="2.2、相对路径"></a>2.2、相对路径</h4><p>一般定位模块中的文件的，相对到工程下。    默认直接到当前工程下的目录寻找文件</p>
+<h4 id="2-2-1、获取工作目录"><a href="#2-2-1、获取工作目录" class="headerlink" title="2.2.1、获取工作目录"></a>2.2.1、获取工作目录</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.getProperty(<span class="string">&quot;user.dir&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>结果：D:\XYSK_Project\xysk-common-data</p>
+<h4 id="2-2-2、类路径"><a href="#2-2-2、类路径" class="headerlink" title="2.2.2、类路径"></a>2.2.2、类路径</h4><p>类路径也是一种特殊的相对路径，只不过它相对的是class文件。</p>
+<p>maven管理的项目，默认情况下resource目录下的文件会被放置类路径下。</p>
+<p>通过类加载器来加载提供的api加载文件</p>
+<p>ClassPathDemo.class.getClassLoader().getResource(“hello.txt”);</p>
+<h3 id="3、读取-resources-目录下的文件方式"><a href="#3、读取-resources-目录下的文件方式" class="headerlink" title="3、读取 resources 目录下的文件方式"></a>3、读取 resources 目录下的文件方式</h3><p>对象.getclass()、类.class和class.forName()得到的字节码文件对象是同一个</p>
+<h4 id="3-1-方式一"><a href="#3-1-方式一" class="headerlink" title="3.1 方式一"></a>3.1 方式一</h4><p>主要核心方法是使用<code>getResource</code>和<code>getPath</code>方法，这里的<code>getResource(&quot;&quot;)</code>里面是空字符串</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function1</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;&quot;</span>).getPath();<span class="comment">//注意getResource(&quot;&quot;)里面是空字符串</span></span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> path + <span class="string">&quot;china_region_info/a.txt&quot;</span>;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(s);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-2-方式二"><a href="#3-2-方式二" class="headerlink" title="3.2 方式二"></a>3.2 方式二</h4><p>主要核心方法是使用<code>getResource</code>和<code>getPath</code>方法，直接通过<code>getResource(fileName)</code>方法获取文件路径，注意如果是路径中带有中文一定要使用<code>URLDecoder.decode</code>解码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function2</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;china_region_info/a.txt&quot;</span>).getPath();</span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> URLDecoder.decode(path, <span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//如果路径中带有中文会被URLEncoder,因此这里需要解码</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-方式三"><a href="#3-3-方式三" class="headerlink" title="3.3 方式三"></a>3.3 方式三</h4><p>直接通过<code>文件名+getFile()</code>来获取文件。如果是文件路径的话<code>getFile</code>和<code>getPath</code>效果是一样的，如果是URL路径的话<code>getPath</code>是带有参数的路径。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function2</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> Test.class.getClassLoader().getResource(<span class="string">&quot;china_region_info/a.txt&quot;</span>).getFile();</span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">String</span> <span class="variable">filePath</span> <span class="operator">=</span> URLDecoder.decode(path, <span class="string">&quot;UTF-8&quot;</span>);<span class="comment">//如果路径中带有中文会被URLEncoder,因此这里需要解码</span></span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-方式四"><a href="#3-4-方式四" class="headerlink" title="3.4 方式四"></a>3.4 方式四</h4><p>直接使用<code>getResourceAsStream</code>方法获取流，上面的几种方式都需要获取文件路径，但是在SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> Test.class.getClassLoader().getResourceAsStream(<span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-5-方式五"><a href="#3-5-方式五" class="headerlink" title="3.5 方式五"></a>3.5 方式五</h4><p>主要也是使用<code>getResourceAsStream</code>方法获取流，不使用<code>getClassLoader</code>可以使用<code>getResourceAsStream(&quot;/配置测试.txt&quot;)</code>直接从<code>resources</code>根路径下获取，SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> Test.class.getResourceAsStream(<span class="string">&quot;/&quot;</span> + <span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-6-方式六"><a href="#3-6-方式六" class="headerlink" title="3.6 方式六"></a>3.6 方式六</h4><p>通过<code>ClassPathResource</code>类获取文件流，SpringBoot中所有文件都在jar包中，没有一个实际的路径，因此可以使用以下方式。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function3</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">ClassPathResource</span> <span class="variable">classPathResource</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathResource</span>(<span class="string">&quot;china_region_info/a.txt&quot;</span>);</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> classPathResource.getInputStream();</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-7-方式七"><a href="#3-7-方式七" class="headerlink" title="3.7 方式七"></a>3.7 方式七</h4><p>通过绝对路径获取项目中文件的位置，只是本地绝对路径，不能用于服务器获取</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">function4</span><span class="params">()</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">rootPath</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;user.dir&quot;</span>);<span class="comment">//D:\XYSK_Project\xysk-common-data</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> rootPath + <span class="string">&quot;/src/main/resources/china_region_info/a.txt&quot;</span>;<span class="comment">//D:\XYSK_Project\xysk-common-data/src/main/resources/china_region_info/a.txt</span></span><br><span class="line">    System.out.println(path);</span><br><span class="line">    <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(path);</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(file));</span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="literal">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -488,9 +750,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-03-30 15:41:20 / Modified: 15:45:39" itemprop="dateCreated datePublished" datetime="2023-03-30T15:41:20+08:00">2023-03-30</time>
+      <time title="Created: 2023-03-30 15:41:20" itemprop="dateCreated datePublished" datetime="2023-03-30T15:41:20+08:00">2023-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-03 07:29:19" itemprop="dateModified" datetime="2023-04-03T07:29:19+08:00">2023-04-03</time>
     </span>
 
   
@@ -503,8 +771,105 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="克隆主分支"><a href="#克隆主分支" class="headerlink" title="克隆主分支"></a>克隆主分支</h2><p>git clone <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a>  </p>
-<h2 id="克隆其他分支"><a href="#克隆其他分支" class="headerlink" title="克隆其他分支"></a>克隆其他分支</h2><p>git clone -b 分支名 <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a></p>
+          <p>版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。</p>
+<ul>
+<li>实现跨区域多人协同开发</li>
+<li>追踪和记载一个或者多个文件的历史记录</li>
+<li>组织和保护你的源代码和文档</li>
+<li>统计工作量</li>
+<li>并行开发、提高开发效率</li>
+<li>跟踪记录整个软件的开发过程</li>
+<li>减轻开发人员的负担，节省时间，同时降低人为错误</li>
+</ul>
+<p>简单说就是用于管理多人协同开发项目的技术。</p>
+<p><strong>分布式版本控制 	Git</strong></p>
+<p>每个人都拥有全部的代码！安全隐患！</p>
+<p>所有版本信息仓库全部同步到本地的每个用户，这样就可以在本地查看所有版本历史，可以离线在本地提交，只需在连网时push到相应的服务器或其他用户那里。由于每个用户那里保存的都是所有的版本数据，只要有一个用户的设备没有问题就可以恢复所有的数据，但这增加了本地存储空间的占用。</p>
+<p>不会因为服务器损坏或者网络问题，造成不能工作的情况</p>
+<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p>平时一定要多使用这些基础的命令！</p>
+<p>1）cd : 改变目录。</p>
+<p>2）cd . . 回退到上一个目录，直接cd进入默认目录</p>
+<p>3）pwd : 显示当前所在的目录路径。</p>
+<p>4）ls(ll):  都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。</p>
+<p>5）touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。</p>
+<p>6）rm:  删除一个文件, rm index.js 就会把index.js文件删除。</p>
+<p>7）mkdir:  新建一个目录,就是新建一个文件夹。</p>
+<p>8）rm -r :  删除一个文件夹, rm -r src 删除src目录</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf / 切勿在Linux中尝试！删除电脑中全部文件！</span><br></pre></td></tr></table></figure>
+
+<p>9）mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。</p>
+<p>10）reset 重新初始化终端&#x2F;清屏。</p>
+<p>11）clear 清屏。</p>
+<p>12）history 查看命令历史。</p>
+<p>13）help 帮助。</p>
+<p>14）exit 退出。</p>
+<p>15）#表示注释</p>
+<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="克隆主分支"><a href="#克隆主分支" class="headerlink" title="克隆主分支"></a>克隆主分支</h3><p>git clone <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a>  </p>
+<h3 id="克隆其他分支"><a href="#克隆其他分支" class="headerlink" title="克隆其他分支"></a>克隆其他分支</h3><p>git clone -b 分支名 <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a></p>
+<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><p>查看配置 git config -l</p>
+<p>查看不同级别的配置文件：</p>
+<p>#查看系统config</p>
+<p>git config –system –list</p>
+<p><em>#查看当前用户（global）配置</em></p>
+<p>it config –global  –list</p>
+<h2 id="设置用户名与邮箱（用户标识，必要）"><a href="#设置用户名与邮箱（用户标识，必要）" class="headerlink" title="设置用户名与邮箱（用户标识，必要）"></a>设置用户名与邮箱（用户标识，必要）</h2><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;kuangshen&quot;  #名称</span><br><span class="line">git config --global user.email 24736743@qq.com   #邮箱</span><br></pre></td></tr></table></figure>
+
+<p>Git基本理论（重要）</p>
+<p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage&#x2F;Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>git的工作流程一般是这样的：</p>
+<p>１、在工作目录中添加、修改文件；</p>
+<p>２、将需要进行版本管理的文件放入暂存区域；</p>
+<p>３、将暂存区域的文件提交到git仓库。</p>
+<p>因此，git管理的文件有三种状态：已修改（modified）,已暂存（staged）,已提交(committed)</p>
+<h2 id="Git项目搭建"><a href="#Git项目搭建" class="headerlink" title="Git项目搭建"></a>Git项目搭建</h2><h2 id="创建工作目录"><a href="#创建工作目录" class="headerlink" title="创建工作目录"></a>创建工作目录</h2><p>工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
+<h2 id="本地仓库搭建"><a href="#本地仓库搭建" class="headerlink" title="本地仓库搭建"></a>本地仓库搭建</h2><p>创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库。</p>
+<p>一、创建全新的仓库</p>
+<p>1、创建全新的仓库，需要用GIT管理的项目的根目录执行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在当前目录新建一个Git代码库</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<p>2、执行后可以看到，仅仅在项目目录多出了一个.git目录，关于版本等的所有信息都在这个目录里面。</p>
+<p>二、克隆远程仓库</p>
+<p>1、另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#克隆一个项目和它的整个代码历史(版本信息)</span><br><span class="line">git clone [url]  # https://gitee.com/kuangstudy/openclass.git</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Git文件操作"><a href="#Git文件操作" class="headerlink" title="Git文件操作"></a>Git文件操作</h2><h3 id="文件的四种状态"><a href="#文件的四种状态" class="headerlink" title="文件的四种状态"></a>文件的四种状态</h3><p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。</p>
+<ul>
+<li>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</li>
+<li>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件</li>
+<li>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改 !</li>
+<li>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified</li>
+</ul>
+<h3 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><p>上面说文件有4种状态，通过如下命令可以查看到文件的状态</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#查看指定文件状态</span><br><span class="line">git status [filename]</span><br><span class="line">#查看所有文件状态</span><br><span class="line">git status</span><br><span class="line">#添加所有文件到暂存区</span><br><span class="line"># git add    </span><br><span class="line">提交暂存区中的内容到本地仓库 -m 提交信息</span><br><span class="line"># git commit -m &quot;消息内容&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等</p>
+<p>在主目录下建立”.gitignore”文件，此文件有如下规则：</p>
+<ol>
+<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。</li>
+<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</li>
+<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
+<li>如果名称的最前面是一个路径分隔符（&#x2F;），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
+<li>如果名称的最后面是一个路径分隔符（&#x2F;），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#为注释</span><br><span class="line">*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！</span><br><span class="line">!lib.txt     #但lib.txt除外</span><br><span class="line">/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp</span><br><span class="line">build/       #忽略build/目录下的所有文件</span><br><span class="line">doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="使用码云"><a href="#使用码云" class="headerlink" title="使用码云"></a>使用码云</h2><p>1、注册登录码云，完善个人信息</p>
+<p>2、设置本机绑定SSH公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 进入 C:\Users\Administrator\.ssh 目录</span><br><span class="line"># 生成公钥</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+
+<p>3、将公钥信息public key 添加到码云账户中即可</p>
+<p>4、使用码云创建一个自己的仓库！</p>
+<p>5、克隆到本地</p>
+<h2 id="GIT分支"><a href="#GIT分支" class="headerlink" title="GIT分支"></a>GIT分支</h2><p>git分支中常用指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">git branch</span><br><span class="line"># 列出所有远程分支</span><br><span class="line">git branch -r</span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">git branch [branch-name]</span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">git checkout -b [branch]</span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">git merge [branch]</span><br><span class="line"># 删除分支</span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"># 删除远程分支</span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+
+<p>如果同一个文件在合并分支时都被修改了则会引起冲突：解决的办法是我们可以修改冲突文件后重新提交！选择要保留他的代码还是你的代码！</p>
+<p>master主分支应该非常稳定，用来发布新版本，一般情况下不允许在上面工作，工作一般情况下在新建的dev分支上工作，工作完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</p>
 
       
     </div>
