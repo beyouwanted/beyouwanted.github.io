@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"beyouwanted.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="注解概念： java代码里的特殊标记，让程序根据注解信息来决定怎么执行该程序   注解可以用在类、构造器、方法、成员变量、参数等位置上 自定义注解public @Interface 注解名称{ ​       public 属性类型 属性名()  default 默认值; } 注意：如果注解中只有一个value属性，使用注解时，value名称可以不写 注解本质上是一个接口，java中所有注解都是继">
+<meta property="og:type" content="article">
+<meta property="og:title" content="注解">
+<meta property="og:url" content="http://beyouwanted.github.io/2023/04/05/%E6%B3%A8%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="注解概念： java代码里的特殊标记，让程序根据注解信息来决定怎么执行该程序   注解可以用在类、构造器、方法、成员变量、参数等位置上 自定义注解public @Interface 注解名称{ ​       public 属性类型 属性名()  default 默认值; } 注意：如果注解中只有一个value属性，使用注解时，value名称可以不写 注解本质上是一个接口，java中所有注解都是继">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-05T01:47:17.000Z">
+<meta property="article:modified_time" content="2023-04-05T09:11:41.844Z">
+<meta property="article:author" content="YangHaiyang">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://beyouwanted.github.io/2023/04/05/%E6%B3%A8%E8%A7%A3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://beyouwanted.github.io/2023/04/05/%E6%B3%A8%E8%A7%A3/","path":"2023/04/05/注解/","title":"注解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>注解 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.2.</span> <span class="nav-text">元注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E8%A7%A3%E6%9E%90%EF%BC%88%E5%BE%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="nav-number">1.3.</span> <span class="nav-text">注解的解析（很重要）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.4.</span> <span class="nav-text">应用场景</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YangHaiyang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/05/%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="注解 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          注解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-05 09:47:17 / Modified: 17:11:41" itemprop="dateCreated datePublished" datetime="2023-04-05T09:47:17+08:00">2023-04-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>概念：</p>
+<p>java代码里的特殊标记，让程序根据注解信息来决定怎么执行该程序  </p>
+<p>注解可以用在类、构造器、方法、成员变量、参数等位置上</p>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>public @Interface 注解名称{</p>
+<p>​       public 属性类型 属性名()  default 默认值;</p>
+<p>}</p>
+<p>注意：如果注解中只有一个value属性，使用注解时，value名称可以不写</p>
+<p>注解本质上是一个接口，java中所有注解都是继承了Annotation接口的</p>
+<p>@注解(…)：其实就是一个实现类对象，实现了该注解以及Annotation接口</p>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>修饰注解的注解</p>
+<p>1、@Target</p>
+<p>声明被修饰的注解只能在哪些位置使用 </p>
+<p>TYPE：类，接口</p>
+<p>FIELD：成员变量</p>
+<p>METHOD：成员方法</p>
+<p>PARAMETER：方法参数</p>
+<p>CONSTRUCTOR：构造器</p>
+<p>LOCAL_VARIABLE：局部变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation3 &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、@Retention</p>
+<p>声明注解的保留周期</p>
+<p>SOURCE：只作用在源码阶段，字节码文件中不存在</p>
+<p>CLASS(默认值)：保留到字节码文件阶段，运行阶段不存在</p>
+<p>RUNTIME(开发常用)：一直保留到运行阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)//当前注解只能使用在类和方法上</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)//控制下面的注解一直保留到运行时</span><br><span class="line">public @interface MyAnnotation3 &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注解的解析（很重要）"><a href="#注解的解析（很重要）" class="headerlink" title="注解的解析（很重要）"></a>注解的解析（很重要）</h3><p>就是判断类上、方法上、成员变量上是否存在注解，并把注解里的内容给解析出来</p>
+<p>如何解析注解</p>
+<p>1、指导思想：要解析谁上面的注解，就应该先拿到谁</p>
+<p>2、比如要解析类上面的注解，则应该先获取该类的Class对象，在通过Class对象解析其上面的注解</p>
+<p>3、比如要解析成员方法上的注解，则应该获取到该成员方法的Method对象，在通过Method对象解析其上面的注解</p>
+<p>4、Class、Method、Field、Constructor等都实现了AnnotatedElement接口，他们都拥有解析注解的能力。</p>
+<p>AnnotatedElement接口提供了解析注解的方法</p>
+<p>public Annotation[] getDeclaredAnnotations()：获取当前对象上面的注解</p>
+<p>public T getDeclaredAnnotation(Class<T> annotationClass)：获取指定的注解对象</p>
+<p>public boolean isAnnotationPresent(Class&lt;’Annotation’&gt; annotationClass)：判断当前对象上是否存在某的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">double</span> <span class="title function_">aaa</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">100</span>;</span><br><span class="line">    String[] bbb();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MyAnnotation(value = &quot;yhy&quot;,aaa = 23.5,bbb = &#123;&quot;好好学习&quot;,&quot;天天向上&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="meta">@MyAnnotation(value = &quot;yhy1&quot;,aaa = 23.6,bbb = &#123;&quot;好好学习1&quot;,&quot;天天向上1&quot;&#125;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Annotationparsing</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parseClass</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//1、先得到Class对象</span></span><br><span class="line">        Class&lt;Demo&gt; c = Demo.class;</span><br><span class="line">        <span class="comment">//2、解析类上的注解</span></span><br><span class="line">        <span class="comment">//判断类上是否包含了某个注解</span></span><br><span class="line">        <span class="keyword">if</span> (c.isAnnotationPresent(MyAnnotation.class))&#123;</span><br><span class="line">            <span class="type">MyAnnotation</span> <span class="variable">myAnnotation</span> <span class="operator">=</span> c.getDeclaredAnnotation(MyAnnotation.class);</span><br><span class="line">            System.out.println(myAnnotation.value());</span><br><span class="line">            System.out.println(myAnnotation.aaa());</span><br><span class="line">            System.out.println(Arrays.toString(myAnnotation.bbb()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parseMethod</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//1、先得到Class对象</span></span><br><span class="line">        Class&lt;Demo&gt; c = Demo.class;</span><br><span class="line">        <span class="comment">//2、获取方法对象</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">m</span> <span class="operator">=</span> c.getDeclaredMethod(<span class="string">&quot;test1&quot;</span>);</span><br><span class="line">        <span class="comment">//3、解析方法上的注解</span></span><br><span class="line">        <span class="comment">//判断方法上是否包含了某个注解</span></span><br><span class="line">        <span class="keyword">if</span> (m.isAnnotationPresent(MyAnnotation.class))&#123;</span><br><span class="line">            <span class="type">MyAnnotation</span> <span class="variable">myAnnotation</span> <span class="operator">=</span> m.getDeclaredAnnotation(MyAnnotation.class);</span><br><span class="line">            System.out.println(myAnnotation.value());</span><br><span class="line">            System.out.println(myAnnotation.aaa());</span><br><span class="line">            System.out.println(Arrays.toString(myAnnotation.bbb()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>模拟Junit框架</p>
+<p>需求：定义若干个方法，只要加了MyTest注解，就会触发该方法执行</p>
+<p>分析</p>
+<p>1、定义一个自定义注解Mytest，只能注解方法，存活范围是一直都在</p>
+<p>2、定义若干个方法，部分方法加上@MyTest注解修饰，部分方法不加</p>
+<p>3、模拟一个junit程序，可以触发加了@MyTest注解的方法执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 模拟junit框架设计</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test1====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test2====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test3</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test3====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test4====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException &#123;</span><br><span class="line">        <span class="type">AnnotationTest</span> <span class="variable">annotationTest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationTest</span>();</span><br><span class="line">        <span class="comment">//启动程序</span></span><br><span class="line">        <span class="comment">//1、得到class对象</span></span><br><span class="line">        Class&lt;AnnotationTest&gt; c = AnnotationTest.class;</span><br><span class="line">        <span class="comment">//2、提取这个类中的全部成员方法</span></span><br><span class="line">        Method[] methods = c.getDeclaredMethods();</span><br><span class="line">        <span class="comment">//3、遍历这个数组中的每个方法，看方法上是否存在@MyTest注解，存在就触发该方法执行</span></span><br><span class="line">        <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">            <span class="keyword">if</span> (method.isAnnotationPresent(MyTest.class))&#123;</span><br><span class="line">                <span class="comment">//当前方法存在</span></span><br><span class="line">                method.invoke(annotationTest);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/04/Swagger/" rel="prev" title="Swagger">
+                  <i class="fa fa-chevron-left"></i> Swagger
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/05/linux%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" rel="next" title="linux中的查用指令">
+                  linux中的查用指令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YangHaiyang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

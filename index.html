@@ -112,7 +112,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -134,6 +134,713 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/05/linux%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/05/linux%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">linux中的查用指令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-04-05 18:05:05" itemprop="dateCreated datePublished" datetime="2023-04-05T18:05:05+08:00">2023-04-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-06 07:34:13" itemprop="dateModified" datetime="2023-04-06T07:34:13+08:00">2023-04-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>1、查看防火墙状态 ：systemctl status firewalld</p>
+<p>2、开启防火墙：service firewalld start</p>
+<p>3、查看白名单：firewall-cmd –zone&#x3D;public –list-ports</p>
+<p>4、添加端口号放入防火墙：firewall-cmd –permanent –zone&#x3D;public –add-port&#x3D;8484&#x2F;tcp</p>
+<p>5、重新载入配置，比如添加规则之后，需要执行此命令：firewall-cmd –reload</p>
+<p>6、查看防火墙状态，是否是running：firewall-cmd –state</p>
+<p>7、列出支持的zone：firewall-cmd –get-zones</p>
+<p>8、列出支持的服务，在列表中的服务是放行的：</p>
+<p>9、查看ftp服务是否支持，返回yes或者no：firewall-cmd –query-service ftp</p>
+<p>10、临时开放ftp服务：firewall-cmd –add-service&#x3D;ftp</p>
+<p>11、永久开放ftp服务：firewall-cmd –add-service&#x3D;ftp –permanent</p>
+<p>12、永久移除ftp服务：firewall-cmd –remove-service&#x3D;ftp –permanent</p>
+<p>13、永久添加80端口：firewall-cmd –add-port&#x3D;80&#x2F;tcp –permanent</p>
+<p>14、永久移除80端口：firewall-cmd –remove-port&#x3D;80&#x2F;tcp –permanent</p>
+<p>15、查看已开放的端口：firewall-cmd –zone&#x3D;public –list-ports </p>
+<p>16、重启防火墙：systemctl restart firewalld.service 或者service firewalld restart</p>
+<p>17、关闭防火墙：service firewalld stop 或者 systemctl stop firewalld</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>22</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<p>22</p>
+<p>2</p>
+<p>2</p>
+<p>2</p>
+<h3 id="fialshell"><a href="#fialshell" class="headerlink" title="fialshell"></a>fialshell</h3><p>光标定位到最后一行：shift+g</p>
+<p>1</p>
+<p>111</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>11</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>11</p>
+<p>1</p>
+<p>1</p>
+<p>1</p>
+<p>11</p>
+<p>1</p>
+<p>1</p>
+<h2 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h2><p>启动tomcat：.&#x2F;startup.sh</p>
+<p>关闭tomcat：</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/05/%E6%B3%A8%E8%A7%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/05/%E6%B3%A8%E8%A7%A3/" class="post-title-link" itemprop="url">注解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-05 09:47:17 / Modified: 17:11:41" itemprop="dateCreated datePublished" datetime="2023-04-05T09:47:17+08:00">2023-04-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>概念：</p>
+<p>java代码里的特殊标记，让程序根据注解信息来决定怎么执行该程序  </p>
+<p>注解可以用在类、构造器、方法、成员变量、参数等位置上</p>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><p>public @Interface 注解名称{</p>
+<p>​       public 属性类型 属性名()  default 默认值;</p>
+<p>}</p>
+<p>注意：如果注解中只有一个value属性，使用注解时，value名称可以不写</p>
+<p>注解本质上是一个接口，java中所有注解都是继承了Annotation接口的</p>
+<p>@注解(…)：其实就是一个实现类对象，实现了该注解以及Annotation接口</p>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><p>修饰注解的注解</p>
+<p>1、@Target</p>
+<p>声明被修饰的注解只能在哪些位置使用 </p>
+<p>TYPE：类，接口</p>
+<p>FIELD：成员变量</p>
+<p>METHOD：成员方法</p>
+<p>PARAMETER：方法参数</p>
+<p>CONSTRUCTOR：构造器</p>
+<p>LOCAL_VARIABLE：局部变量</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation3 &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、@Retention</p>
+<p>声明注解的保留周期</p>
+<p>SOURCE：只作用在源码阶段，字节码文件中不存在</p>
+<p>CLASS(默认值)：保留到字节码文件阶段，运行阶段不存在</p>
+<p>RUNTIME(开发常用)：一直保留到运行阶段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)//当前注解只能使用在类和方法上</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)//控制下面的注解一直保留到运行时</span><br><span class="line">public @interface MyAnnotation3 &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="注解的解析（很重要）"><a href="#注解的解析（很重要）" class="headerlink" title="注解的解析（很重要）"></a>注解的解析（很重要）</h3><p>就是判断类上、方法上、成员变量上是否存在注解，并把注解里的内容给解析出来</p>
+<p>如何解析注解</p>
+<p>1、指导思想：要解析谁上面的注解，就应该先拿到谁</p>
+<p>2、比如要解析类上面的注解，则应该先获取该类的Class对象，在通过Class对象解析其上面的注解</p>
+<p>3、比如要解析成员方法上的注解，则应该获取到该成员方法的Method对象，在通过Method对象解析其上面的注解</p>
+<p>4、Class、Method、Field、Constructor等都实现了AnnotatedElement接口，他们都拥有解析注解的能力。</p>
+<p>AnnotatedElement接口提供了解析注解的方法</p>
+<p>public Annotation[] getDeclaredAnnotations()：获取当前对象上面的注解</p>
+<p>public T getDeclaredAnnotation(Class<T> annotationClass)：获取指定的注解对象</p>
+<p>public boolean isAnnotationPresent(Class&lt;’Annotation’&gt; annotationClass)：判断当前对象上是否存在某的注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.TYPE,ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    String <span class="title function_">value</span><span class="params">()</span>;</span><br><span class="line">    <span class="type">double</span> <span class="title function_">aaa</span><span class="params">()</span> <span class="keyword">default</span> <span class="number">100</span>;</span><br><span class="line">    String[] bbb();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MyAnnotation(value = &quot;yhy&quot;,aaa = 23.5,bbb = &#123;&quot;好好学习&quot;,&quot;天天向上&quot;&#125;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="meta">@MyAnnotation(value = &quot;yhy1&quot;,aaa = 23.6,bbb = &#123;&quot;好好学习1&quot;,&quot;天天向上1&quot;&#125;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Annotationparsing</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parseClass</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//1、先得到Class对象</span></span><br><span class="line">        Class&lt;Demo&gt; c = Demo.class;</span><br><span class="line">        <span class="comment">//2、解析类上的注解</span></span><br><span class="line">        <span class="comment">//判断类上是否包含了某个注解</span></span><br><span class="line">        <span class="keyword">if</span> (c.isAnnotationPresent(MyAnnotation.class))&#123;</span><br><span class="line">            <span class="type">MyAnnotation</span> <span class="variable">myAnnotation</span> <span class="operator">=</span> c.getDeclaredAnnotation(MyAnnotation.class);</span><br><span class="line">            System.out.println(myAnnotation.value());</span><br><span class="line">            System.out.println(myAnnotation.aaa());</span><br><span class="line">            System.out.println(Arrays.toString(myAnnotation.bbb()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">parseMethod</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException &#123;</span><br><span class="line">        <span class="comment">//1、先得到Class对象</span></span><br><span class="line">        Class&lt;Demo&gt; c = Demo.class;</span><br><span class="line">        <span class="comment">//2、获取方法对象</span></span><br><span class="line">        <span class="type">Method</span> <span class="variable">m</span> <span class="operator">=</span> c.getDeclaredMethod(<span class="string">&quot;test1&quot;</span>);</span><br><span class="line">        <span class="comment">//3、解析方法上的注解</span></span><br><span class="line">        <span class="comment">//判断方法上是否包含了某个注解</span></span><br><span class="line">        <span class="keyword">if</span> (m.isAnnotationPresent(MyAnnotation.class))&#123;</span><br><span class="line">            <span class="type">MyAnnotation</span> <span class="variable">myAnnotation</span> <span class="operator">=</span> m.getDeclaredAnnotation(MyAnnotation.class);</span><br><span class="line">            System.out.println(myAnnotation.value());</span><br><span class="line">            System.out.println(myAnnotation.aaa());</span><br><span class="line">            System.out.println(Arrays.toString(myAnnotation.bbb()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>模拟Junit框架</p>
+<p>需求：定义若干个方法，只要加了MyTest注解，就会触发该方法执行</p>
+<p>分析</p>
+<p>1、定义一个自定义注解Mytest，只能注解方法，存活范围是一直都在</p>
+<p>2、定义若干个方法，部分方法加上@MyTest注解修饰，部分方法不加</p>
+<p>3、模拟一个junit程序，可以触发加了@MyTest注解的方法执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.METHOD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> MyTest &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 模拟junit框架设计</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AnnotationTest</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test1</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test1====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test2</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test2====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test3</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test3====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MyTest</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test4</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;====test4====&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException &#123;</span><br><span class="line">        <span class="type">AnnotationTest</span> <span class="variable">annotationTest</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AnnotationTest</span>();</span><br><span class="line">        <span class="comment">//启动程序</span></span><br><span class="line">        <span class="comment">//1、得到class对象</span></span><br><span class="line">        Class&lt;AnnotationTest&gt; c = AnnotationTest.class;</span><br><span class="line">        <span class="comment">//2、提取这个类中的全部成员方法</span></span><br><span class="line">        Method[] methods = c.getDeclaredMethods();</span><br><span class="line">        <span class="comment">//3、遍历这个数组中的每个方法，看方法上是否存在@MyTest注解，存在就触发该方法执行</span></span><br><span class="line">        <span class="keyword">for</span> (Method method : methods) &#123;</span><br><span class="line">            <span class="keyword">if</span> (method.isAnnotationPresent(MyTest.class))&#123;</span><br><span class="line">                <span class="comment">//当前方法存在</span></span><br><span class="line">                method.invoke(annotationTest);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/04/Swagger/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/04/Swagger/" class="post-title-link" itemprop="url">Swagger</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-04-04 13:38:13" itemprop="dateCreated datePublished" datetime="2023-04-04T13:38:13+08:00">2023-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-05 09:26:43" itemprop="dateModified" datetime="2023-04-05T09:26:43+08:00">2023-04-05</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Swagger"><a href="#Swagger" class="headerlink" title="Swagger"></a>Swagger</h2><p>OpenAPI规范（OpenAPI Specification 简称OAS）是Linux基金会的一个项目，试图通过定义一种用来描述API格式或API定义的语言，来规范RESTful服务开发过程，</p>
+<p>Swagger是符合OpenAPI规范的接口开发工具，支持从设计和文档到测试和部署的整个API生命周期的开发</p>
+<h3 id="ApiModel"><a href="#ApiModel" class="headerlink" title="@ApiModel"></a>@ApiModel</h3><p>使用场景：在实体类上边使用，标记类为<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=swagger&spm=1001.2101.3001.7020">swagger</a>的解析类</p>
+<p>属性：</p>
+<p>value：为模型提供备用名称</p>
+<p>description：提供详细的描述</p>
+<h2 id="ApiModelProperty"><a href="#ApiModelProperty" class="headerlink" title="@ApiModelProperty"></a>@ApiModelProperty</h2><p>使用场景：使用在被 @ApiModel 注解的模型类的属性上 </p>
+<p>属性：</p>
+<p>value：属性简要说明</p>
+<p>name：运行覆盖属性的名称。重写属性名称</p>
+<p>required：是否为必传参数,false:非必传参数; true:必传参数</p>
+<p>example：属性的示例值</p>
+<p>@Data<br>@NoArgsConstructor<br>@AllArgsConstructor<br>@ApiModel(value &#x3D; “SysUserInfoResponse”, description &#x3D; “用户信息响应模型”)<br>public class SysUserInfoResponse {</p>
+<pre><code>@ApiModelProperty(value = &quot;用户ID&quot;, required = true, example = &quot;&quot;)
+private String userId;
+ 
+@ApiModelProperty(value = &quot;用户名&quot;, required = false, example = &quot;&quot;)
+private String userName;
+ 
+@ApiModelProperty(value = &quot;所属部门Id&quot;, required = false, example = &quot;&quot;)
+private String deptId;
+
+@ApiModelProperty(value = &quot;所属公司&quot;, required = false, example = &quot;&quot;)
+private String comId;
+ 
+@ApiModelProperty(value = &quot;所属公司名称&quot;, required = false, example = &quot;&quot;)
+private String comName;
+ 
+@ApiModelProperty(value = &quot;身份证号&quot;, required = false, example = &quot;&quot;)
+private String idnum;
+ 
+@ApiModelProperty(value = &quot;手机号&quot;, required = false, example = &quot;&quot;)
+private String phone;
+ 
+@ApiModelProperty(value = &quot;邮箱&quot;, required = false, example = &quot;&quot;)
+private String email;
+</code></pre>
+<p>}</p>
+<h2 id="swagger极致用法"><a href="#swagger极致用法" class="headerlink" title="swagger极致用法"></a>swagger极致用法</h2><p>1、导入坐标依赖</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;io.springfox&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;springfox-swagger2&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">2.9</span><span class="number">.2</span>&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">    &lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;io.springfox&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;springfox-swagger-ui&lt;/artifactId&gt;</span><br><span class="line">        &lt;version&gt;<span class="number">2.9</span><span class="number">.2</span>&lt;/version&gt;</span><br><span class="line">    &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、在启动类上添加@EnableSwagger2注解</p>
+<p>3在浏览器输入网址 <a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a></p>
+<h2 id="swagger配置"><a href="#swagger配置" class="headerlink" title="swagger配置"></a>swagger配置</h2><h4 id="1、修改swagger的基本信息，创建swaggerconfig配置类"><a href="#1、修改swagger的基本信息，创建swaggerconfig配置类" class="headerlink" title="1、修改swagger的基本信息，创建swaggerconfig配置类"></a>1、修改swagger的基本信息，创建swaggerconfig配置类</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@Configuration</span><br><span class="line">public class SwaggerConfig &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public Docket getDocket()&#123;</span><br><span class="line">        return new Docket(DocumentationType.SWAGGER_2).apiInfo(getApiInfo()).select().build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private ApiInfo getApiInfo()&#123;</span><br><span class="line">        return new ApiInfoBuilder().title(&quot;第一个Swaagger的标题&quot;).description(&quot;这里是描述&quot;).version(&quot;1.0.0&quot;)</span><br><span class="line">                .contact(new Contact(&quot;杨海洋&quot;,&quot;http://www.yhy.com&quot;,&quot;2359573637@qq.com&quot;)).build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 则</p>
+<p><a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html%E7%9A%84%E9%A1%B5%E9%9D%A2%E6%95%88%E6%9E%9C%E5%A6%82%E4%B8%8B">http://localhost:8080/swagger-ui.html的页面效果如下</a></p>
+<p>第一个Swaagger的标题<code>1.0.0</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ Base URL: localhost:8080/ ]</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://localhost:8080/v2/api-docs">http://localhost:8080/v2/api-docs</a></p>
+<p>这里是描述</p>
+<p><a target="_blank" rel="noopener" href="http://www.yhy.com/">杨海洋 - Website</a></p>
+<p><a href="mailto:2359573637@qq.com">Send email to 杨海洋</a></p>
+<h4 id="2、-apis-方法"><a href="#2、-apis-方法" class="headerlink" title="2、 apis()方法"></a>2、 apis()方法</h4><p>1、可以通过apis()方法设置那个包中的内容被扫描</p>
+<p>2、自定义注解设置不需要生成接口文档的方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(&#123;ElementType.METHOD&#125;)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> NotIncludeSwagger &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="keyword">public</span> Docket <span class="title function_">getDocket</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">            .apiInfo(getApiInfo())</span><br><span class="line">            .select()</span><br><span class="line">            .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.yhy.controller&quot;</span>))</span><br><span class="line">            .apis(not(withMethodAnnotation(NotIncludeSwagger.class)))</span><br><span class="line">            .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NotIncludeSwagger</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/getPeople&quot;)</span></span><br><span class="line"><span class="keyword">public</span> People <span class="title function_">getPeople</span><span class="params">(Long id,String name)</span>&#123;</span><br><span class="line">    <span class="type">People</span> <span class="variable">people</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">    people.setId(id);</span><br><span class="line">    people.setName(name);</span><br><span class="line">    people.setAddress(<span class="string">&quot;宿迁&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> people;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、设置范围"><a href="#3、设置范围" class="headerlink" title="3、设置范围"></a>3、设置范围</h4><p>通过public ApiSelectorBuilder paths(Predicate<String> selector)可以设置满足什么样规则的url被生成接口文档。可以使用正则表达式进行匹配。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">public Docket getDocket()&#123;</span><br><span class="line">    return new Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">            .apiInfo(getApiInfo())</span><br><span class="line">            .select()</span><br><span class="line">            .apis(RequestHandlerSelectors.basePackage(&quot;com.yhy.controller&quot;))</span><br><span class="line">            .apis(not(withMethodAnnotation(NotIncludeSwagger.class)))</span><br><span class="line">            .paths(or(PathSelectors.regex(&quot;/people/.*&quot;),PathSelectors.regex(&quot;/person/.*&quot;)))</span><br><span class="line">            .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="swagger2常用注解"><a href="#swagger2常用注解" class="headerlink" title="swagger2常用注解"></a>swagger2常用注解</h2><p>1、 @Api</p>
+<p>是类上的注解。控制整个类生成接口信息的内容</p>
+<p>属性：</p>
+<p>tags：类的名称。可以有多个值，多个值表示多个副本</p>
+<p>description：描述，已过时</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/people&quot;)</span></span><br><span class="line"><span class="meta">@Api(tags = &#123;&quot;mydemo1&quot;,&quot;mydemo2&quot;&#125;,description = &quot;描述&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DemoController</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//@NotIncludeSwagger</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/getPeople&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> People <span class="title function_">getPeople</span><span class="params">(Long id,String name)</span>&#123;</span><br><span class="line">        <span class="type">People</span> <span class="variable">people</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">        people.setId(id);</span><br><span class="line">        people.setName(name);</span><br><span class="line">        people.setAddress(<span class="string">&quot;宿迁&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> people;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、@ApiOperation</p>
+<p>写在方法上，对方法进行总体描述</p>
+<p>属性：</p>
+<p>value：接口描述</p>
+<p>notes：提示信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@NotIncludeSwagger</span><br><span class="line">@GetMapping(&quot;/getPeople&quot;)</span><br><span class="line">@ApiOperation(value = &quot;获取内容&quot;,notes = &quot;根据这个人的编号和姓名查询这个人的详细信息&quot;)</span><br><span class="line">public People getPeople(Long id,String name)&#123;</span><br><span class="line">    People people = new People();</span><br><span class="line">    people.setId(id);</span><br><span class="line">    people.setName(name);</span><br><span class="line">    people.setAddress(&quot;宿迁&quot;);</span><br><span class="line">    return people;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、@ApiParam</p>
+<p>​	写在方法参数前面。用于对参数进行描述和说明是否为必填项等说明</p>
+<p>属性：</p>
+<p>name：参数名称</p>
+<p>value：参数描述</p>
+<p>required：是否是必须 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@NotIncludeSwagger</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/getPeople&quot;)</span></span><br><span class="line"><span class="meta">@ApiOperation(value = &quot;获取内容&quot;,notes = &quot;根据这个人的编号和姓名查询这个人的详细信息&quot;)</span></span><br><span class="line"><span class="keyword">public</span> People <span class="title function_">getPeople</span><span class="params">(Long id,<span class="meta">@ApiParam(name = &quot;name123&quot;,value = &quot;姓名&quot;,required = true)</span> String name)</span>&#123;</span><br><span class="line">    <span class="type">People</span> <span class="variable">people</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">    people.setId(id);</span><br><span class="line">    people.setName(name);</span><br><span class="line">    people.setAddress(<span class="string">&quot;宿迁&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> people;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>4、@ApiModel</p>
+<p>是类上的注解，主要应用在model上，也就是说这个注解一般写在实体类上</p>
+<p>属性：</p>
+<p>value：名称</p>
+<p>description：描述</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@ApiModel(value = &quot;人的实体类&quot;,description = &quot;实体类，封装了People的全部属性&quot;)</span><br><span class="line">public class People &#123;</span><br><span class="line">    private Long id;</span><br><span class="line">    private String name;</span><br><span class="line">    private String address;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>5、@ApiModelProperty</p>
+<p>可以用在方法或属性上。用于当对象作为参数时定义这个字段的内容</p>
+<p>属性：</p>
+<p>value：描述</p>
+<p>name：重写属性名</p>
+<p>required：是否是必须的</p>
+<p>example：示例内容</p>
+<p>hidden：是否隐藏</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class People &#123;</span><br><span class="line">    @ApiModelProperty(value = &quot;编号&quot;,name = &quot;id&quot;,required = true,example = &quot;123&quot;)</span><br><span class="line">    private Long id;</span><br><span class="line">    private String name;</span><br><span class="line">    private String address;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>6、@ApiImplicitParam</p>
+<p>用在方法上，表示单独的请求参数，总体功能和@ApiParam类似</p>
+<p>属性：</p>
+<p>name：属性名</p>
+<p>value：描述</p>
+<p>required：是否为必须</p>
+<p>paramType：属性类型</p>
+<p>dataType：数据类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//@NotIncludeSwagger</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/getPeople&quot;)</span></span><br><span class="line"><span class="comment">//@ApiImplicitParam(name = &quot;id&quot;,value = &quot;编号&quot;,required = true,dataType = &quot;String&quot;,paramType = &quot;body&quot;)</span></span><br><span class="line"><span class="meta">@ApiImplicitParams(value = &#123;@ApiImplicitParam(name = &quot;id&quot;,value = &quot;编号&quot;,required = true,dataType = &quot;String&quot;,paramType = &quot;body&quot;),</span></span><br><span class="line"><span class="meta">        @ApiImplicitParam(name = &quot;name&quot;,value = &quot;姓名&quot;,required = true,dataType = &quot;String&quot;,paramType = &quot;body&quot;)&#125;)</span></span><br><span class="line"><span class="keyword">public</span> People <span class="title function_">getPeople</span><span class="params">(Long id,String name)</span>&#123;</span><br><span class="line">    <span class="type">People</span> <span class="variable">people</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">People</span>();</span><br><span class="line">    people.setId(id);</span><br><span class="line">    people.setName(name);</span><br><span class="line">    people.setAddress(<span class="string">&quot;宿迁&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> people;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/03/%E8%B7%A8%E5%9F%9F%E8%81%94%E8%B0%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/03/%E8%B7%A8%E5%9F%9F%E8%81%94%E8%B0%83/" class="post-title-link" itemprop="url">跨域联调</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-03 13:21:53 / Modified: 21:36:01" itemprop="dateCreated datePublished" datetime="2023-04-03T13:21:53+08:00">2023-04-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="同一个局域网内"><a href="#同一个局域网内" class="headerlink" title="同一个局域网内"></a>同一个局域网内</h2><h4 id="可以通过无线局域网适配器IPv4-地址访问其他设备的资源"><a href="#可以通过无线局域网适配器IPv4-地址访问其他设备的资源" class="headerlink" title="可以通过无线局域网适配器IPv4 地址访问其他设备的资源"></a>可以通过无线局域网适配器IPv4 地址访问其他设备的资源</h4><p>win+R—-&gt;cmd—-&gt;ipconfig</p>
+<p>无线局域网适配器 WLAN:</p>
+<p>   连接特定的 DNS 后缀 . . . . . . . :<br>   本地链接 IPv6 地址. . . . . . . . : fe80::a2b:b9da:ee50:146a%2<br>   IPv4 地址 . . . . . . . . . . . . : 192.168.10.24<br>   子网掩码  . . . . . . . . . . . . : 255.255.255.0<br>   默认网关. . . . . . . . . . . . . : 192.168.10.1</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/03/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/04/03/nginx/" class="post-title-link" itemprop="url">nginx</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-03 08:42:56 / Modified: 13:22:40" itemprop="dateCreated datePublished" datetime="2023-04-03T08:42:56+08:00">2023-04-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>两种方法：</p>
+<p>1） 直接双击该目录下的”<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=nginx&spm=1001.2101.3001.7020">nginx</a>.exe”，即可启动nginx服务器；</p>
+<p>2） 命令行进入该文件夹，执行start nginx命令，也会直接启动nginx服务器。</p>
+<p>注意：直接将文件解压，然后直接在有nginx.exe同级的目录下执行cmd,当然你也可以双击下图红框中的文件，就可以<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%90%AF%E5%8A%A8nginx&spm=1001.2101.3001.7020">启动nginx</a>了，但是这种方式启动存在一个问题，如果你的配置文件出现问题，是没有任何提示的。当然可以通过看nginx中logs文件夹下的错误日志排查错误。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>启动服务：start nginx<br>退出服务：nginx -s quit<br>强制关闭服务：nginx -s stop<br>重载服务：nginx -s reload　　（重载服务配置文件，类似于重启，服务不会中止）<br>验证配置文件：nginx -t<br>使用配置文件：nginx -c “配置文件路径”<br>使用帮助：nginx -h</p>
+<h2 id="配置文件讲解"><a href="#配置文件讲解" class="headerlink" title="配置文件讲解"></a>配置文件讲解</h2><p>nginx包下面有一个conf的文件夹，下面 nginx.conf的配置文件</p>
+<p><img src="https://img-blog.csdnimg.cn/4a78ccf0afca4715816db91dbd1a859f.png" alt="在这里插入图片描述"></p>
+<p>其中listen 监听的是端口80是nginx占用的端口<br>server_name 是访问该nginx的ip地址<br>location 是访问网页上访问的地址路径<br>proxy_pass 是访问上诉路径时所对应的nginx转发的路径</p>
+<p>nginx的功能也就是 网页上访问的是 http:localhost:80&#x2F;nginx<br>转发的地址是 <a target="_blank" rel="noopener" href="http://127.0.0.1:8080/nginx/">http://127.0.0.1:8080/nginx/</a><br>注意： proxy_pass 最后面一定要带分号 ；，要不nginx是无法启动的</p>
+<p>注意这种方式存在问题启动的很慢，或者启动不起来，但是当你配置文件出现问题的时候，他会提示你哪里错了</p>
+<p>如果上面的方式很难启动，那么可以直接双击nginx.exe就可以了。</p>
+<h3 id="去掉注释信息后，可以将-nginx-conf-配置文件分为三部分："><a href="#去掉注释信息后，可以将-nginx-conf-配置文件分为三部分：" class="headerlink" title="去掉注释信息后，可以将 nginx.conf 配置文件分为三部分："></a>去掉注释信息后，可以将<code> nginx.conf</code> 配置文件分为三部分：</h3><h2 id="2-1-第一部分：全局块"><a href="#2-1-第一部分：全局块" class="headerlink" title="2.1 第一部分：全局块"></a>2.1 第一部分：全局块</h2><p> worker_processes  1;</p>
+<p>从配置文件开始到events块之间的内容，主要会设置一些影响Nginx服务器整体运行的配置指令，主要包括：配置运行Nginx服务器的用户（组）、允许生成的 worker process 数，进程PID存放路径、日志存放路径和类型以及配置文件的引入等。</p>
+<p>上面这行 worker_processes 配置，是 Nginx 服务器并发处理服务的关键配置，该值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的约束。</p>
+<h2 id="2-2-第二部分：events-块"><a href="#2-2-第二部分：events-块" class="headerlink" title="2.2 第二部分：events 块"></a>2.2 第二部分：events 块</h2><p>events {<br>    worker_connections  1024;<br>}events 块涉及的指令主要影响Nginx服务器与用户的网络连接，常用的设置包括：是否开启对多 work process下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 work process 可以同时支持的最大连接数等</p>
+<p>上述例子就表示每个 work process 支持的最大连接数为 1024。这部分的配置对Nginx的性能影响较大，在实际中应该灵活配置</p>
+<h2 id="2-3-第三部分：http-块"><a href="#2-3-第三部分：http-块" class="headerlink" title="2.3 第三部分：http 块"></a>2.3 第三部分：http 块</h2><p>http {<br>    include       mime.types;<br>    default_type  application&#x2F;octet-stream;<br>    sendfile        on;<br>    keepalive_timeout  65;</p>
+<pre><code>server &#123;
+    listen       80;
+    server_name  localhost;
+
+    location / &#123;
+        root   html;
+        index  index.html index.htm;
+    &#125;
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html &#123;
+        root   html;
+&#125;
+</code></pre>
+<p>}</p>
+<p>这部分是 Nginx 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。需要注意的是：http 块也可以包括 http 全局块、server 块。下面的反向代理、动静分离、负载均衡都是在这部分中配置</p>
+<p>http 全局块：http 全局块配置的指令包括：文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等。</p>
+<p>server 块：这块和虚拟主机有密切关系，从用户角度看，虚拟主机和一台独立的硬件主机是完全一样的，该技术的产生是为了节省互联网服务器硬件成本。</p>
+<p>每个http块可以包括多个server块，而每个server块就相当于一个虚拟主机。而每个server块也分为全局server块，以及可以同时包含多个locaton块</p>
+<h3 id="2-3-1-全局-server-块"><a href="#2-3-1-全局-server-块" class="headerlink" title="2.3.1 全局 server 块"></a>2.3.1 全局 server 块</h3><p>最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或<code>IP</code>配置。</p>
+<h3 id="2-3-2-location-块"><a href="#2-3-2-location-块" class="headerlink" title="2.3.2 location 块"></a>2.3.2 location 块</h3><p>一个 server 块可以配置多个 location 块。</p>
+<p>这块的主要作用是：基于 Nginx 服务器接收到的请求字符串（例如 server_name&#x2F;uri-string），对虚拟主机名称（也可以是 IP 别名）之外的字符串（例如 前面的 &#x2F;uri-string）进行匹配，对特定的请求进行处理。地址定向、数据缓存和应答控制等功能，还有许多第三方模块的配置也在这里进行。<br>http {<br>    include       mime.types;<br>    default_type  application&#x2F;octet-stream;<br>    sendfile        on;<br>    keepalive_timeout  65;</p>
+<pre><code>server &#123;
+    listen       80;
+    server_name  localhost;
+
+    # 若请求路径像这样：www.xxxx/img/example.png
+    # 则访问/img/目录下的文件时，nginx会去/var/www/image/img/目录下找文件
+    location /img/ &#123;
+        root /var/www/image;
+    &#125;
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html &#123;
+        root   html;
+&#125;
+</code></pre>
+<p>}</p>
+<h1 id="3-反向代理配置"><a href="#3-反向代理配置" class="headerlink" title="3. 反向代理配置"></a>3. 反向代理配置</h1><h2 id="3-1-反向代理实例一"><a href="#3-1-反向代理实例一" class="headerlink" title="3.1 反向代理实例一"></a>3.1 反向代理实例一</h2><p>实现效果：使用 <code>Nginx </code>反向代理，访问<code>www.123.com</code>直接跳转到<code>127.0.0.1:8080</code></p>
+<p>注意：此处如果要想从<code>www.123.com</code>跳转到本机指定的<code>ip</code>，需要修改本机的<code>hosts</code>文件。此处略过</p>
+<p>server {<br>    listen       80;<br>    server_name  192.168.17.129;</p>
+<pre><code>location / &#123;
+    root   html;
+    index  index.html index.htm;
+    proxy_pass  http://127.0.0.1:8080
+&#125;
+</code></pre>
+<p>}</p>
+<p>如上配置，<code>Nginx</code>监听 <code>80</code>端口，访问域名为<code>www.123.com</code>（不加端口号时默认为 <code>80</code>端口），故访问该域名时会跳转到 <code>127.0.0.1:8080</code> 路径上。</p>
+<p>此处的意思为：nginx 反向代理服务监听 192.168.17.129的80端口，如果有请求过来，则转到proxy_pass配置的对应服务器上，仅此而已。</p>
+<p>在location下，同时配置root和proxy_pass选项时，两个选项只会二选一执行<br>此处不能配置https反向代理</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>安装</p>
+<p><strong>1). 安装依赖包</strong></p>
+<p>由于nginx是基于c语言开发的，所以需要安装c语言的编译环境，及正则表达式库等第三方依赖库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc pcre-devel zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
+
+<p><strong>2). 下载Nginx安装包</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install wget</span><br><span class="line">wget https://nginx.org/download/nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>3). 解压nginx压缩包</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p><strong>4). 配置Nginx编译环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd nginx-1.16.1 </span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br></pre></td></tr></table></figure>
+
+<p>说明:</p>
+<p>–prefix 指定的目录，就是我们安装Nginx的目录。</p>
+<p> <strong>编译&amp;安装</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx-命令"><a href="#Nginx-命令" class="headerlink" title="Nginx-命令"></a>Nginx-命令</h2><p>Nginx中，我们的二进制可执行文件(nginx)存放在sbin目录下，虽然只有一个可执行文件，但是我们可以通过该指令配合不同的参数达到更加强大的功能。接下来，我们就演示一下Nginx常见指令, 在执行下面的指令时,都需要在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;目录下执行。</p>
+<p><strong>1). 查看版本</strong></p>
+<p><strong>2). 检查配置文件</strong> </p>
+<p>修改了nginx.conf核心配置文件之后，在启动Nginx服务之前，可以先检查一下conf&#x2F;nginx.conf文件配置的是否有错误，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -t</span><br></pre></td></tr></table></figure>
+
+<p><strong>3). 启动</strong></p>
+<p>.&#x2F;nginx</p>
+<p>启动之后，我们可以通过ps -ef指令来查看nginx的进程是否存在。  </p>
+<p>注意： nginx服务启动后，默认就会有两个进程。</p>
+<p>注意：</p>
+<p>要想正常访问Nginx，需要关闭防火墙或开放指定端口号，执行的指令如下：</p>
+<p>A. 关闭防火墙</p>
+<p>systemctl stop firewalld</p>
+<p>B. 开放80端口</p>
+<p>firewall-cmd –zone&#x3D;public –add-port&#x3D;80&#x2F;tcp –permanent</p>
+<p>firewall-cmd –reload</p>
+<p><strong>4). 停止</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<p>停止之后，我们可以查看nginx的进程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep nginx</span><br></pre></td></tr></table></figure>
+
+<p><strong>5). 重新加载</strong></p>
+<p>当修改了Nginx配置文件后，需要重新加载才能生效，可以使用下面命令重新加载配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><p>在上述我们在使用nginx命令在进行服务的启动、停止、重新加载时，都需要用到一个指令nginx，而这个指令是在nginx&#x2F;sbin目录下的，我们每一次使用这个指令都需要切换到sbin目录才可以，使用相对繁琐。那么我们能不能在任意目录下都可以执行该指令来操作nginx呢？答案是可以的，配置nginx的环境变量即可。</p>
+<p>通过vim编辑器，打开&#x2F;etc&#x2F;profile文件, 在PATH环境变量中增加nginx的sbin目录，如下：</p>
+<p>修改完配置文件之后，需要执行 source &#x2F;etc&#x2F;profile 使文件生效。 接下来，我们就可以在任意目录下执行nginx的指令了，如：</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -714,367 +1421,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/03/30/git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YangHaiyang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/30/git/" class="post-title-link" itemprop="url">git</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-30 15:41:20" itemprop="dateCreated datePublished" datetime="2023-03-30T15:41:20+08:00">2023-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-03 07:29:19" itemprop="dateModified" datetime="2023-04-03T07:29:19+08:00">2023-04-03</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。</p>
-<ul>
-<li>实现跨区域多人协同开发</li>
-<li>追踪和记载一个或者多个文件的历史记录</li>
-<li>组织和保护你的源代码和文档</li>
-<li>统计工作量</li>
-<li>并行开发、提高开发效率</li>
-<li>跟踪记录整个软件的开发过程</li>
-<li>减轻开发人员的负担，节省时间，同时降低人为错误</li>
-</ul>
-<p>简单说就是用于管理多人协同开发项目的技术。</p>
-<p><strong>分布式版本控制 	Git</strong></p>
-<p>每个人都拥有全部的代码！安全隐患！</p>
-<p>所有版本信息仓库全部同步到本地的每个用户，这样就可以在本地查看所有版本历史，可以离线在本地提交，只需在连网时push到相应的服务器或其他用户那里。由于每个用户那里保存的都是所有的版本数据，只要有一个用户的设备没有问题就可以恢复所有的数据，但这增加了本地存储空间的占用。</p>
-<p>不会因为服务器损坏或者网络问题，造成不能工作的情况</p>
-<h2 id="常用的Linux命令"><a href="#常用的Linux命令" class="headerlink" title="常用的Linux命令"></a>常用的Linux命令</h2><p>平时一定要多使用这些基础的命令！</p>
-<p>1）cd : 改变目录。</p>
-<p>2）cd . . 回退到上一个目录，直接cd进入默认目录</p>
-<p>3）pwd : 显示当前所在的目录路径。</p>
-<p>4）ls(ll):  都是列出当前目录中的所有文件，只不过ll(两个ll)列出的内容更为详细。</p>
-<p>5）touch : 新建一个文件 如 touch index.js 就会在当前目录下新建一个index.js文件。</p>
-<p>6）rm:  删除一个文件, rm index.js 就会把index.js文件删除。</p>
-<p>7）mkdir:  新建一个目录,就是新建一个文件夹。</p>
-<p>8）rm -r :  删除一个文件夹, rm -r src 删除src目录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf / 切勿在Linux中尝试！删除电脑中全部文件！</span><br></pre></td></tr></table></figure>
-
-<p>9）mv 移动文件, mv index.html src index.html 是我们要移动的文件, src 是目标文件夹,当然, 这样写,必须保证文件和目标文件夹在同一目录下。</p>
-<p>10）reset 重新初始化终端&#x2F;清屏。</p>
-<p>11）clear 清屏。</p>
-<p>12）history 查看命令历史。</p>
-<p>13）help 帮助。</p>
-<p>14）exit 退出。</p>
-<p>15）#表示注释</p>
-<h2 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h2><h3 id="克隆主分支"><a href="#克隆主分支" class="headerlink" title="克隆主分支"></a>克隆主分支</h3><p>git clone <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a>  </p>
-<h3 id="克隆其他分支"><a href="#克隆其他分支" class="headerlink" title="克隆其他分支"></a>克隆其他分支</h3><p>git clone -b 分支名 <a target="_blank" rel="noopener" href="http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git">http://git.xinyinsk.com:28000/xysk-cloud/xysk-cloud-base.git</a></p>
-<h3 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h3><p>查看配置 git config -l</p>
-<p>查看不同级别的配置文件：</p>
-<p>#查看系统config</p>
-<p>git config –system –list</p>
-<p><em>#查看当前用户（global）配置</em></p>
-<p>it config –global  –list</p>
-<h2 id="设置用户名与邮箱（用户标识，必要）"><a href="#设置用户名与邮箱（用户标识，必要）" class="headerlink" title="设置用户名与邮箱（用户标识，必要）"></a>设置用户名与邮箱（用户标识，必要）</h2><p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;kuangshen&quot;  #名称</span><br><span class="line">git config --global user.email 24736743@qq.com   #邮箱</span><br></pre></td></tr></table></figure>
-
-<p>Git基本理论（重要）</p>
-<p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage&#x2F;Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。</p>
-<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p>git的工作流程一般是这样的：</p>
-<p>１、在工作目录中添加、修改文件；</p>
-<p>２、将需要进行版本管理的文件放入暂存区域；</p>
-<p>３、将暂存区域的文件提交到git仓库。</p>
-<p>因此，git管理的文件有三种状态：已修改（modified）,已暂存（staged）,已提交(committed)</p>
-<h2 id="Git项目搭建"><a href="#Git项目搭建" class="headerlink" title="Git项目搭建"></a>Git项目搭建</h2><h2 id="创建工作目录"><a href="#创建工作目录" class="headerlink" title="创建工作目录"></a>创建工作目录</h2><p>工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
-<h2 id="本地仓库搭建"><a href="#本地仓库搭建" class="headerlink" title="本地仓库搭建"></a>本地仓库搭建</h2><p>创建本地仓库的方法有两种：一种是创建全新的仓库，另一种是克隆远程仓库。</p>
-<p>一、创建全新的仓库</p>
-<p>1、创建全新的仓库，需要用GIT管理的项目的根目录执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#在当前目录新建一个Git代码库</span><br><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>2、执行后可以看到，仅仅在项目目录多出了一个.git目录，关于版本等的所有信息都在这个目录里面。</p>
-<p>二、克隆远程仓库</p>
-<p>1、另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地！</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#克隆一个项目和它的整个代码历史(版本信息)</span><br><span class="line">git clone [url]  # https://gitee.com/kuangstudy/openclass.git</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Git文件操作"><a href="#Git文件操作" class="headerlink" title="Git文件操作"></a>Git文件操作</h2><h3 id="文件的四种状态"><a href="#文件的四种状态" class="headerlink" title="文件的四种状态"></a>文件的四种状态</h3><p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。</p>
-<ul>
-<li>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</li>
-<li>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改, 而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件</li>
-<li>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git checkout即从库中取出文件, 覆盖当前修改 !</li>
-<li>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致, 文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified</li>
-</ul>
-<h3 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><p>上面说文件有4种状态，通过如下命令可以查看到文件的状态</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#查看指定文件状态</span><br><span class="line">git status [filename]</span><br><span class="line">#查看所有文件状态</span><br><span class="line">git status</span><br><span class="line">#添加所有文件到暂存区</span><br><span class="line"># git add    </span><br><span class="line">提交暂存区中的内容到本地仓库 -m 提交信息</span><br><span class="line"># git commit -m &quot;消息内容&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>有些时候我们不想把某些文件纳入版本控制中，比如数据库文件，临时文件，设计文件等</p>
-<p>在主目录下建立”.gitignore”文件，此文件有如下规则：</p>
-<ol>
-<li>忽略文件中的空行或以井号（#）开始的行将会被忽略。</li>
-<li>可以使用Linux通配符。例如：星号（*）代表任意多个字符，问号（？）代表一个字符，方括号（[abc]）代表可选字符范围，大括号（{string1,string2,…}）代表可选的字符串等。</li>
-<li>如果名称的最前面有一个感叹号（!），表示例外规则，将不被忽略。</li>
-<li>如果名称的最前面是一个路径分隔符（&#x2F;），表示要忽略的文件在此目录下，而子目录中的文件不忽略。</li>
-<li>如果名称的最后面是一个路径分隔符（&#x2F;），表示要忽略的是此目录下该名称的子目录，而非文件（默认文件或目录都忽略）。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#为注释</span><br><span class="line">*.txt        #忽略所有 .txt结尾的文件,这样的话上传就不会被选中！</span><br><span class="line">!lib.txt     #但lib.txt除外</span><br><span class="line">/temp        #仅忽略项目根目录下的TODO文件,不包括其它目录temp</span><br><span class="line">build/       #忽略build/目录下的所有文件</span><br><span class="line">doc/*.txt    #会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="使用码云"><a href="#使用码云" class="headerlink" title="使用码云"></a>使用码云</h2><p>1、注册登录码云，完善个人信息</p>
-<p>2、设置本机绑定SSH公钥，实现免密码登录！（免密码登录，这一步挺重要的，码云是远程仓库，我们是平时工作在本地仓库！)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 进入 C:\Users\Administrator\.ssh 目录</span><br><span class="line"># 生成公钥</span><br><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-
-<p>3、将公钥信息public key 添加到码云账户中即可</p>
-<p>4、使用码云创建一个自己的仓库！</p>
-<p>5、克隆到本地</p>
-<h2 id="GIT分支"><a href="#GIT分支" class="headerlink" title="GIT分支"></a>GIT分支</h2><p>git分支中常用指令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">git branch</span><br><span class="line"># 列出所有远程分支</span><br><span class="line">git branch -r</span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">git branch [branch-name]</span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">git checkout -b [branch]</span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">git merge [branch]</span><br><span class="line"># 删除分支</span><br><span class="line">git branch -d [branch-name]</span><br><span class="line"># 删除远程分支</span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
-
-<p>如果同一个文件在合并分支时都被修改了则会引起冲突：解决的办法是我们可以修改冲突文件后重新提交！选择要保留他的代码还是你的代码！</p>
-<p>master主分支应该非常稳定，用来发布新版本，一般情况下不允许在上面工作，工作一般情况下在新建的dev分支上工作，工作完后，比如上要发布，或者说dev分支代码稳定后可以合并到主分支master上来。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/03/30/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YangHaiyang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/30/%E5%85%A8%E5%B1%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E7%B1%BB/" class="post-title-link" itemprop="url">全局异常处理类</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2023-03-30 08:40:13 / Modified: 10:34:53" itemprop="dateCreated datePublished" datetime="2023-03-30T08:40:13+08:00">2023-03-30</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/03/28/kafka/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="YangHaiyang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/03/28/kafka/" class="post-title-link" itemprop="url">kafka</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2023-03-28 15:47:52" itemprop="dateCreated datePublished" datetime="2023-03-28T15:47:52+08:00">2023-03-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-31 20:47:18" itemprop="dateModified" datetime="2023-03-31T20:47:18+08:00">2023-03-31</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="启动kafka"><a href="#启动kafka" class="headerlink" title="启动kafka"></a>启动kafka</h1><h2 id="1、关闭防火墙"><a href="#1、关闭防火墙" class="headerlink" title="1、关闭防火墙"></a>1、关闭防火墙</h2><h3 id="查看防火墙状态"><a href="#查看防火墙状态" class="headerlink" title="查看防火墙状态"></a>查看防火墙状态</h3><p>firewall-cmd –state  </p>
-<h3 id="关闭linux防火墙"><a href="#关闭linux防火墙" class="headerlink" title="关闭linux防火墙"></a>关闭linux防火墙</h3><p>systemctl stop firewalld</p>
-<p>或者</p>
-<p>systemctl disable firewalld</p>
-<h2 id="2、启动zookeeper"><a href="#2、启动zookeeper" class="headerlink" title="2、启动zookeeper"></a>2、启动zookeeper</h2><p>bin&#x2F;zkServer.sh start  </p>
-<h3 id="关闭服务"><a href="#关闭服务" class="headerlink" title="关闭服务"></a>关闭服务</h3><p>bin&#x2F;zkServer.sh stop</p>
-<h2 id="3、启动kafka"><a href="#3、启动kafka" class="headerlink" title="3、启动kafka"></a>3、启动kafka</h2><p>bin&#x2F;kafka-server-start.sh config&#x2F;server.properties  </p>
-<h3 id="关闭服务-1"><a href="#关闭服务-1" class="headerlink" title="关闭服务"></a>关闭服务</h3><p>bin&#x2F;kafka-server-stop.sh</p>
-<h1 id="生产者详解"><a href="#生产者详解" class="headerlink" title="生产者详解"></a>生产者详解</h1><h1 id="0、快速入门"><a href="#0、快速入门" class="headerlink" title="0、快速入门"></a>0、快速入门</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ProducerFastStart</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">brokerList</span> <span class="operator">=</span> <span class="string">&quot;192.168.58.130:9092&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> <span class="string">&quot;yhy&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        <span class="comment">// 设置key序列化器</span></span><br><span class="line">       <span class="comment">// properties.put(&quot;key.serializer&quot;,&quot;org.apache.kafka.common.serialization.StringSerializer&quot;);</span></span><br><span class="line"></span><br><span class="line">        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());</span><br><span class="line">        <span class="comment">//设置重试次数</span></span><br><span class="line">        properties.put(ProducerConfig.RETRIES_CONFIG,<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置值序列化器</span></span><br><span class="line">        <span class="comment">//properties.put(&quot;value.serializer&quot;,&quot;org.apache.kafka.common.serialization.StringSerializer&quot;);</span></span><br><span class="line"></span><br><span class="line">        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,StringSerializer.class.getName());</span><br><span class="line">        <span class="comment">// 设置集群地址</span></span><br><span class="line">        <span class="comment">//properties.put(&quot;bootstrap.servers&quot;,brokerList);</span></span><br><span class="line"></span><br><span class="line">        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,brokerList);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//自定义分区器的使用</span></span><br><span class="line">        <span class="comment">//properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, MyDefinePartitioner.class.getName());</span></span><br><span class="line">        <span class="comment">//自定义拦截器使用</span></span><br><span class="line">       <span class="comment">// properties.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, ProducerInterceptorPrefix.class.getName());</span></span><br><span class="line">        <span class="comment">//properties.put(ProducerConfig.ACKS_CONFIG,&quot;0&quot;);</span></span><br><span class="line">        KafkaProducer&lt;String,String&gt; producer = <span class="keyword">new</span> <span class="title class_">KafkaProducer</span>&lt;String, String&gt;(properties);</span><br><span class="line">        ProducerRecord&lt;String,String&gt; record = <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(topic,<span class="string">&quot;kafka-demo&quot;</span>,<span class="string">&quot;hello,kafka!&quot;</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//同步</span></span><br><span class="line"><span class="comment">//            Future&lt;RecordMetadata&gt; send = producer.send(record);</span></span><br><span class="line"><span class="comment">//            RecordMetadata recordMetadata = send.get();</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;topic: &quot;+recordMetadata.topic());</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;partition: &quot;+recordMetadata.partition());</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;offset: &quot;+recordMetadata.offset());</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//异步</span></span><br><span class="line">            producer.send(record, <span class="keyword">new</span> <span class="title class_">Callback</span>() &#123;</span><br><span class="line">                <span class="meta">@Override</span></span><br><span class="line">                <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCompletion</span><span class="params">(RecordMetadata recordMetadata, Exception e)</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (e == <span class="literal">null</span>)&#123;</span><br><span class="line">                        System.out.println(<span class="string">&quot;topic: &quot;</span>+recordMetadata.topic());</span><br><span class="line">                        System.out.println(<span class="string">&quot;partition: &quot;</span>+recordMetadata.partition());</span><br><span class="line">                        System.out.println(<span class="string">&quot;offset: &quot;</span>+recordMetadata.offset());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        producer.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ConsumerFastStart</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">brokerList</span> <span class="operator">=</span> <span class="string">&quot;192.168.58.130:9092&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> <span class="string">&quot;yhy&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span>  <span class="type">String</span> <span class="variable">groupId</span> <span class="operator">=</span> <span class="string">&quot;group.demo&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Properties</span> <span class="variable">properties</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">        <span class="comment">// 设置反序列化器</span></span><br><span class="line">        <span class="comment">//properties.put(&quot;key.deserializer&quot;,&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);</span></span><br><span class="line">        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());</span><br><span class="line">        <span class="comment">//properties.put(&quot;value.deserializer&quot;,&quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);</span></span><br><span class="line">        properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,StringDeserializer.class.getName());</span><br><span class="line">        <span class="comment">// 设置集群地址</span></span><br><span class="line">        <span class="comment">//properties.put(&quot;bootstrap.servers&quot;,brokerList);</span></span><br><span class="line">        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,brokerList);</span><br><span class="line">        <span class="comment">//properties.put(&quot;group.id&quot;,groupId);</span></span><br><span class="line">        properties.put(ConsumerConfig.GROUP_ID_CONFIG,groupId);</span><br><span class="line"></span><br><span class="line">        KafkaConsumer&lt;String,String&gt; consumer = <span class="keyword">new</span> <span class="title class_">KafkaConsumer</span>&lt;String, String&gt;(properties);</span><br><span class="line">        consumer.subscribe(Collections.singletonList(topic));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="literal">true</span>)&#123;</span><br><span class="line">            ConsumerRecords&lt;String,String&gt; records = consumer.poll(Duration.ofMillis(<span class="number">1000</span>));</span><br><span class="line">            <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;</span><br><span class="line">                System.out.println(record.value());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="1、同步发送"><a href="#1、同步发送" class="headerlink" title="1、同步发送"></a>1、同步发送</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;RecordMetadata&gt; send = producer.send(record);</span><br><span class="line"><span class="type">RecordMetadata</span> <span class="variable">recordMetadata</span> <span class="operator">=</span> send.get();</span><br><span class="line">System.out.println(<span class="string">&quot;topic: &quot;</span>+recordMetadata.topic());</span><br><span class="line">System.out.println(<span class="string">&quot;partition: &quot;</span>+recordMetadata.partition());</span><br><span class="line">System.out.println(<span class="string">&quot;offset: &quot;</span>+recordMetadata.offset())</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、异步发送"><a href="#2、异步发送" class="headerlink" title="2、异步发送"></a>2、异步发送</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">producer.send(record, <span class="keyword">new</span> <span class="title class_">Callback</span>() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onCompletion</span><span class="params">(RecordMetadata recordMetadata, Exception e)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (e == <span class="literal">null</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;topic: &quot;</span>+recordMetadata.topic());</span><br><span class="line">            System.out.println(<span class="string">&quot;partition: &quot;</span>+recordMetadata.partition());</span><br><span class="line">            System.out.println(<span class="string">&quot;offset: &quot;</span>+recordMetadata.offset());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="3、序列化器"><a href="#3、序列化器" class="headerlink" title="3、序列化器"></a>3、序列化器</h2><p>消息要到网络上进行传输，必须进行序列化</p>
-<p>kafka提供的序列化器 —-org.apache.kafka.common.serialization.StringSerializer&#x2F;IntegerSerializer&#x2F;BytesSerializer</p>
-<p>注意：必须实现接口org.apache.kafka.common.serialization.Serializer</p>
-<h3 id="3-1、自定义序列化器"><a href="#3-1、自定义序列化器" class="headerlink" title="3.1、自定义序列化器"></a>3.1、自定义序列化器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CompanySerializer</span> <span class="keyword">implements</span> <span class="title class_">Serializer</span>&lt;Company&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">byte</span>[] serialize(String s, Company company) &#123;</span><br><span class="line">        <span class="keyword">if</span> (company == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">byte</span>[] name = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">0</span>],address = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (company.getName() != <span class="literal">null</span>)&#123;</span><br><span class="line">                company.getName().getBytes(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (company.getAddress() != <span class="literal">null</span>)&#123;</span><br><span class="line">                company.getAddress().getBytes(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="type">ByteBuffer</span> <span class="variable">buffer</span> <span class="operator">=</span> ByteBuffer.allocate(<span class="number">4</span> + <span class="number">4</span> + name.length + address.length);</span><br><span class="line">            buffer.putInt(name.length);</span><br><span class="line">            buffer.put(name);</span><br><span class="line">            buffer.putInt(address.length);</span><br><span class="line">            buffer.put(address);</span><br><span class="line">            <span class="keyword">return</span> buffer.array();</span><br><span class="line">        &#125;<span class="keyword">catch</span> (Exception e)&#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">0</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、分区器"><a href="#4、分区器" class="headerlink" title="4、分区器"></a>4、分区器</h2><p>本身kafaka有自己的分区策略，如果未指定，就会使用默认的分区策略，kafaka根据传递消息的key来进行分区的分配，即hash（key）% numPartitions，如果key相同的话，那么就会分配到统一的分区</p>
-<h3 id="4-1、默认分区器"><a href="#4-1、默认分区器" class="headerlink" title="4.1、默认分区器"></a>4.1、默认分区器</h3><p>org.apache.kafka.clients.producer.internals.DefaultPartitioner</p>
-<h3 id="4-2、自定义分区器"><a href="#4-2、自定义分区器" class="headerlink" title="4.2、自定义分区器"></a>4.2、自定义分区器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MyDefinePartitioner</span> <span class="keyword">implements</span> <span class="title class_">Partitioner</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="type">AtomicInteger</span> <span class="variable">counter</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AtomicInteger</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">partition</span><span class="params">(String s, Object o, <span class="type">byte</span>[] bytes, Object o1, <span class="type">byte</span>[] bytes1, Cluster cluster)</span> &#123;</span><br><span class="line">        List&lt;PartitionInfo&gt; partitions = cluster.partitionsForTopic(s);</span><br><span class="line">        <span class="type">int</span> <span class="variable">numPartitions</span> <span class="operator">=</span> partitions.size();</span><br><span class="line">        <span class="keyword">if</span> (<span class="literal">null</span> == bytes)&#123;</span><br><span class="line">            <span class="keyword">return</span> counter.getAndIncrement() % numPartitions;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Utils.toPositive(Utils.murmur2(bytes))%numPartitions;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span> &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(Map&lt;String, ?&gt; map)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5、拦截器"><a href="#5、拦截器" class="headerlink" title="5、拦截器"></a>5、拦截器</h2><p>使用场景</p>
-<p>1、按照规则过滤掉不符合要求的消息</p>
-<p>2、修改消息的内容</p>
-<p>3、统计类需求</p>
-<h3 id="5-1、自定义拦截器"><a href="#5-1、自定义拦截器" class="headerlink" title="5.1、自定义拦截器"></a>5.1、自定义拦截器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ProducerInterceptorPrefix</span> <span class="keyword">implements</span> <span class="title class_">ProducerInterceptor</span>&lt;String,String&gt; &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">long</span> <span class="variable">sendSuccess</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="type">long</span> <span class="variable">sendFailure</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> ProducerRecord&lt;String, String&gt; <span class="title function_">onSend</span><span class="params">(ProducerRecord&lt;String, String&gt; producerRecord)</span> &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">modifiedValue</span> <span class="operator">=</span> <span class="string">&quot;prefix_&quot;</span>+producerRecord.value();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ProducerRecord</span>&lt;&gt;(producerRecord.topic(),producerRecord.partition(),</span><br><span class="line">                producerRecord.timestamp(),producerRecord.key(),modifiedValue,producerRecord.headers());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">onAcknowledgement</span><span class="params">(RecordMetadata recordMetadata, Exception e)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (e == <span class="literal">null</span>)&#123;</span><br><span class="line">            sendSuccess++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            sendFailure++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">close</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">double</span> <span class="variable">successRatio</span> <span class="operator">=</span> (<span class="type">double</span>) sendSuccess / (sendSuccess+sendFailure);</span><br><span class="line">        System.out.println(<span class="string">&quot;[INFO] 发送成功率=&quot;</span> + String.format(<span class="string">&quot;%f&quot;</span>,successRatio*<span class="number">100</span>)+<span class="string">&quot;%&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configure</span><span class="params">(Map&lt;String, ?&gt; map)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="消费者详解"><a href="#消费者详解" class="headerlink" title="消费者详解"></a>消费者详解</h1><h2 id="3-1-订阅主题和分区"><a href="#3-1-订阅主题和分区" class="headerlink" title="3.1 订阅主题和分区"></a>3.1 订阅主题和分区</h2><h3 id="3-1-1-订阅主题，通过调用subscribe-方法"><a href="#3-1-1-订阅主题，通过调用subscribe-方法" class="headerlink" title="3.1.1 订阅主题，通过调用subscribe()方法"></a>3.1.1 订阅主题，通过调用subscribe()方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">KafkaConsumer&lt;String,String&gt; consumer = <span class="keyword">new</span> <span class="title class_">KafkaConsumer</span>&lt;String, String&gt;(properties);</span><br><span class="line">consumer.subscribe(Collections.singletonList(topic));</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-1-2-正则表达式"><a href="#3-1-2-正则表达式" class="headerlink" title="3.1.2 正则表达式"></a>3.1.2 正则表达式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consumer.subscribe(Pattern.compile(<span class="string">&quot;yhy*&quot;</span>));</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="3-1-3-指派分区"><a href="#3-1-3-指派分区" class="headerlink" title="3.1.3 指派分区"></a>3.1.3 指派分区</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">consumer.assign(Arrays.asList(<span class="keyword">new</span> <span class="title class_">TopicPartition</span>(topic,<span class="number">0</span>)));</span><br></pre></td></tr></table></figure>
-
-<p>​	</p>
-<h1 id="springboot整合kafka"><a href="#springboot整合kafka" class="headerlink" title="springboot整合kafka"></a>springboot整合kafka</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">KafkaApplication</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(KafkaApplication.class);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        SpringApplication.run(KafkaApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping(&quot;/index&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">index</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello kafka&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> KafkaTemplate kafkaTemplate;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">topic</span> <span class="operator">=</span> <span class="string">&quot;yhy&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 消息的生产者</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> input</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/send/&#123;input&#125;&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sendToKafka</span><span class="params">(<span class="meta">@PathVariable</span> String input)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.kafkaTemplate.send(topic,input);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//事务的支持</span></span><br><span class="line">        kafkaTemplate.executeInTransaction(t-&gt;&#123;</span><br><span class="line">            t.send(topic,input);</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;error&quot;</span>.equals(input))&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;input is error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            t.send(topic,input+<span class="string">&quot; another&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Send success&quot;</span>+input;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(&quot;/send2/&#123;input&#125;&quot;)</span></span><br><span class="line">    <span class="comment">//事务的支持</span></span><br><span class="line">    <span class="meta">@Transactional(rollbackFor = RuntimeException.class)</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sendToKafkaTran</span><span class="params">(<span class="meta">@PathVariable</span> String input)</span>&#123;</span><br><span class="line">            kafkaTemplate.send(topic,input);</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;error&quot;</span>.equals(input))&#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;input is error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            kafkaTemplate.send(topic,input+<span class="string">&quot; another&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Send success&quot;</span>+input;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 消息的接收</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> input</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@KafkaListener(id = &quot;&quot;,topics = topic,groupId = &quot;group.demo&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">listener</span><span class="params">(String input)</span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">&quot;message input value:&#123;&#125;&quot;</span>,input);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>

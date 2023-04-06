@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha256-/4UQcSmErDzPCMAiuOiWPVVsNN2s3ZY/NsmXNcj0IFc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"beyouwanted.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.15.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Windows启动两种方法： 1） 直接双击该目录下的”nginx.exe”，即可启动nginx服务器； 2） 命令行进入该文件夹，执行start nginx命令，也会直接启动nginx服务器。 注意：直接将文件解压，然后直接在有nginx.exe同级的目录下执行cmd,当然你也可以双击下图红框中的文件，就可以启动nginx了，但是这种方式启动存在一个问题，如果你的配置文件出现问题，是没有任何提示">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx">
+<meta property="og:url" content="http://beyouwanted.github.io/2023/04/03/nginx/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Windows启动两种方法： 1） 直接双击该目录下的”nginx.exe”，即可启动nginx服务器； 2） 命令行进入该文件夹，执行start nginx命令，也会直接启动nginx服务器。 注意：直接将文件解压，然后直接在有nginx.exe同级的目录下执行cmd,当然你也可以双击下图红框中的文件，就可以启动nginx了，但是这种方式启动存在一个问题，如果你的配置文件出现问题，是没有任何提示">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/4a78ccf0afca4715816db91dbd1a859f.png">
+<meta property="article:published_time" content="2023-04-03T00:42:56.000Z">
+<meta property="article:modified_time" content="2023-04-03T05:22:40.535Z">
+<meta property="article:author" content="YangHaiyang">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/4a78ccf0afca4715816db91dbd1a859f.png">
+
+
+<link rel="canonical" href="http://beyouwanted.github.io/2023/04/03/nginx/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://beyouwanted.github.io/2023/04/03/nginx/","path":"2023/04/03/nginx/","title":"nginx"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>nginx | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows"><span class="nav-number">1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8"><span class="nav-number">1.1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AE%B2%E8%A7%A3"><span class="nav-number">1.3.</span> <span class="nav-text">配置文件讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%BB%E6%8E%89%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF%E5%90%8E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%86-nginx-conf-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%88%86%E4%B8%BA%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">去掉注释信息后，可以将 nginx.conf 配置文件分为三部分：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86%EF%BC%9A%E5%85%A8%E5%B1%80%E5%9D%97"><span class="nav-number">1.4.</span> <span class="nav-text">2.1 第一部分：全局块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86%EF%BC%9Aevents-%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text">2.2 第二部分：events 块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86%EF%BC%9Ahttp-%E5%9D%97"><span class="nav-number">1.6.</span> <span class="nav-text">2.3 第三部分：http 块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-1-%E5%85%A8%E5%B1%80-server-%E5%9D%97"><span class="nav-number">1.6.1.</span> <span class="nav-text">2.3.1 全局 server 块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-2-location-%E5%9D%97"><span class="nav-number">1.6.2.</span> <span class="nav-text">2.3.2 location 块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">3. 反向代理配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%AE%9E%E4%BE%8B%E4%B8%80"><span class="nav-number">2.1.</span> <span class="nav-text">3.1 反向代理实例一</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux"><span class="nav-number">2.2.</span> <span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.</span> <span class="nav-text">Nginx-命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.1.</span> <span class="nav-text">环境变量配置</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YangHaiyang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://beyouwanted.github.io/2023/04/03/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YangHaiyang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="nginx | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          nginx
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-04-03 08:42:56 / Modified: 13:22:40" itemprop="dateCreated datePublished" datetime="2023-04-03T08:42:56+08:00">2023-04-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>两种方法：</p>
+<p>1） 直接双击该目录下的”<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=nginx&spm=1001.2101.3001.7020">nginx</a>.exe”，即可启动nginx服务器；</p>
+<p>2） 命令行进入该文件夹，执行start nginx命令，也会直接启动nginx服务器。</p>
+<p>注意：直接将文件解压，然后直接在有nginx.exe同级的目录下执行cmd,当然你也可以双击下图红框中的文件，就可以<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E5%90%AF%E5%8A%A8nginx&spm=1001.2101.3001.7020">启动nginx</a>了，但是这种方式启动存在一个问题，如果你的配置文件出现问题，是没有任何提示的。当然可以通过看nginx中logs文件夹下的错误日志排查错误。</p>
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><p>启动服务：start nginx<br>退出服务：nginx -s quit<br>强制关闭服务：nginx -s stop<br>重载服务：nginx -s reload　　（重载服务配置文件，类似于重启，服务不会中止）<br>验证配置文件：nginx -t<br>使用配置文件：nginx -c “配置文件路径”<br>使用帮助：nginx -h</p>
+<h2 id="配置文件讲解"><a href="#配置文件讲解" class="headerlink" title="配置文件讲解"></a>配置文件讲解</h2><p>nginx包下面有一个conf的文件夹，下面 nginx.conf的配置文件</p>
+<p><img src="https://img-blog.csdnimg.cn/4a78ccf0afca4715816db91dbd1a859f.png" alt="在这里插入图片描述"></p>
+<p>其中listen 监听的是端口80是nginx占用的端口<br>server_name 是访问该nginx的ip地址<br>location 是访问网页上访问的地址路径<br>proxy_pass 是访问上诉路径时所对应的nginx转发的路径</p>
+<p>nginx的功能也就是 网页上访问的是 http:localhost:80&#x2F;nginx<br>转发的地址是 <a target="_blank" rel="noopener" href="http://127.0.0.1:8080/nginx/">http://127.0.0.1:8080/nginx/</a><br>注意： proxy_pass 最后面一定要带分号 ；，要不nginx是无法启动的</p>
+<p>注意这种方式存在问题启动的很慢，或者启动不起来，但是当你配置文件出现问题的时候，他会提示你哪里错了</p>
+<p>如果上面的方式很难启动，那么可以直接双击nginx.exe就可以了。</p>
+<h3 id="去掉注释信息后，可以将-nginx-conf-配置文件分为三部分："><a href="#去掉注释信息后，可以将-nginx-conf-配置文件分为三部分：" class="headerlink" title="去掉注释信息后，可以将 nginx.conf 配置文件分为三部分："></a>去掉注释信息后，可以将<code> nginx.conf</code> 配置文件分为三部分：</h3><h2 id="2-1-第一部分：全局块"><a href="#2-1-第一部分：全局块" class="headerlink" title="2.1 第一部分：全局块"></a>2.1 第一部分：全局块</h2><p> worker_processes  1;</p>
+<p>从配置文件开始到events块之间的内容，主要会设置一些影响Nginx服务器整体运行的配置指令，主要包括：配置运行Nginx服务器的用户（组）、允许生成的 worker process 数，进程PID存放路径、日志存放路径和类型以及配置文件的引入等。</p>
+<p>上面这行 worker_processes 配置，是 Nginx 服务器并发处理服务的关键配置，该值越大，可以支持的并发处理量也越多，但是会受到硬件、软件等设备的约束。</p>
+<h2 id="2-2-第二部分：events-块"><a href="#2-2-第二部分：events-块" class="headerlink" title="2.2 第二部分：events 块"></a>2.2 第二部分：events 块</h2><p>events {<br>    worker_connections  1024;<br>}events 块涉及的指令主要影响Nginx服务器与用户的网络连接，常用的设置包括：是否开启对多 work process下的网络连接进行序列化，是否允许同时接收多个网络连接，选取哪种事件驱动模型来处理连接请求，每个 work process 可以同时支持的最大连接数等</p>
+<p>上述例子就表示每个 work process 支持的最大连接数为 1024。这部分的配置对Nginx的性能影响较大，在实际中应该灵活配置</p>
+<h2 id="2-3-第三部分：http-块"><a href="#2-3-第三部分：http-块" class="headerlink" title="2.3 第三部分：http 块"></a>2.3 第三部分：http 块</h2><p>http {<br>    include       mime.types;<br>    default_type  application&#x2F;octet-stream;<br>    sendfile        on;<br>    keepalive_timeout  65;</p>
+<pre><code>server &#123;
+    listen       80;
+    server_name  localhost;
+
+    location / &#123;
+        root   html;
+        index  index.html index.htm;
+    &#125;
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html &#123;
+        root   html;
+&#125;
+</code></pre>
+<p>}</p>
+<p>这部分是 Nginx 服务器配置中最频繁的部分，代理、缓存和日志定义等绝大多数功能和第三方模块的配置都在这里。需要注意的是：http 块也可以包括 http 全局块、server 块。下面的反向代理、动静分离、负载均衡都是在这部分中配置</p>
+<p>http 全局块：http 全局块配置的指令包括：文件引入、MIME-TYPE 定义、日志自定义、连接超时时间、单链接请求数上限等。</p>
+<p>server 块：这块和虚拟主机有密切关系，从用户角度看，虚拟主机和一台独立的硬件主机是完全一样的，该技术的产生是为了节省互联网服务器硬件成本。</p>
+<p>每个http块可以包括多个server块，而每个server块就相当于一个虚拟主机。而每个server块也分为全局server块，以及可以同时包含多个locaton块</p>
+<h3 id="2-3-1-全局-server-块"><a href="#2-3-1-全局-server-块" class="headerlink" title="2.3.1 全局 server 块"></a>2.3.1 全局 server 块</h3><p>最常见的配置是本虚拟机主机的监听配置和本虚拟主机的名称或<code>IP</code>配置。</p>
+<h3 id="2-3-2-location-块"><a href="#2-3-2-location-块" class="headerlink" title="2.3.2 location 块"></a>2.3.2 location 块</h3><p>一个 server 块可以配置多个 location 块。</p>
+<p>这块的主要作用是：基于 Nginx 服务器接收到的请求字符串（例如 server_name&#x2F;uri-string），对虚拟主机名称（也可以是 IP 别名）之外的字符串（例如 前面的 &#x2F;uri-string）进行匹配，对特定的请求进行处理。地址定向、数据缓存和应答控制等功能，还有许多第三方模块的配置也在这里进行。<br>http {<br>    include       mime.types;<br>    default_type  application&#x2F;octet-stream;<br>    sendfile        on;<br>    keepalive_timeout  65;</p>
+<pre><code>server &#123;
+    listen       80;
+    server_name  localhost;
+
+    # 若请求路径像这样：www.xxxx/img/example.png
+    # 则访问/img/目录下的文件时，nginx会去/var/www/image/img/目录下找文件
+    location /img/ &#123;
+        root /var/www/image;
+    &#125;
+
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html &#123;
+        root   html;
+&#125;
+</code></pre>
+<p>}</p>
+<h1 id="3-反向代理配置"><a href="#3-反向代理配置" class="headerlink" title="3. 反向代理配置"></a>3. 反向代理配置</h1><h2 id="3-1-反向代理实例一"><a href="#3-1-反向代理实例一" class="headerlink" title="3.1 反向代理实例一"></a>3.1 反向代理实例一</h2><p>实现效果：使用 <code>Nginx </code>反向代理，访问<code>www.123.com</code>直接跳转到<code>127.0.0.1:8080</code></p>
+<p>注意：此处如果要想从<code>www.123.com</code>跳转到本机指定的<code>ip</code>，需要修改本机的<code>hosts</code>文件。此处略过</p>
+<p>server {<br>    listen       80;<br>    server_name  192.168.17.129;</p>
+<pre><code>location / &#123;
+    root   html;
+    index  index.html index.htm;
+    proxy_pass  http://127.0.0.1:8080
+&#125;
+</code></pre>
+<p>}</p>
+<p>如上配置，<code>Nginx</code>监听 <code>80</code>端口，访问域名为<code>www.123.com</code>（不加端口号时默认为 <code>80</code>端口），故访问该域名时会跳转到 <code>127.0.0.1:8080</code> 路径上。</p>
+<p>此处的意思为：nginx 反向代理服务监听 192.168.17.129的80端口，如果有请求过来，则转到proxy_pass配置的对应服务器上，仅此而已。</p>
+<p>在location下，同时配置root和proxy_pass选项时，两个选项只会二选一执行<br>此处不能配置https反向代理</p>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><p>安装</p>
+<p><strong>1). 安装依赖包</strong></p>
+<p>由于nginx是基于c语言开发的，所以需要安装c语言的编译环境，及正则表达式库等第三方依赖库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc pcre-devel zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
+
+<p><strong>2). 下载Nginx安装包</strong></p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install wget</span><br><span class="line">wget https://nginx.org/download/nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>3). 解压nginx压缩包</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.16.1.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p><strong>4). 配置Nginx编译环境</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd nginx-1.16.1 </span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br></pre></td></tr></table></figure>
+
+<p>说明:</p>
+<p>–prefix 指定的目录，就是我们安装Nginx的目录。</p>
+<p> <strong>编译&amp;安装</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp; make install</span><br></pre></td></tr></table></figure>
+
+<h2 id="Nginx-命令"><a href="#Nginx-命令" class="headerlink" title="Nginx-命令"></a>Nginx-命令</h2><p>Nginx中，我们的二进制可执行文件(nginx)存放在sbin目录下，虽然只有一个可执行文件，但是我们可以通过该指令配合不同的参数达到更加强大的功能。接下来，我们就演示一下Nginx常见指令, 在执行下面的指令时,都需要在&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;目录下执行。</p>
+<p><strong>1). 查看版本</strong></p>
+<p><strong>2). 检查配置文件</strong> </p>
+<p>修改了nginx.conf核心配置文件之后，在启动Nginx服务之前，可以先检查一下conf&#x2F;nginx.conf文件配置的是否有错误，命令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -t</span><br></pre></td></tr></table></figure>
+
+<p><strong>3). 启动</strong></p>
+<p>.&#x2F;nginx</p>
+<p>启动之后，我们可以通过ps -ef指令来查看nginx的进程是否存在。  </p>
+<p>注意： nginx服务启动后，默认就会有两个进程。</p>
+<p>注意：</p>
+<p>要想正常访问Nginx，需要关闭防火墙或开放指定端口号，执行的指令如下：</p>
+<p>A. 关闭防火墙</p>
+<p>systemctl stop firewalld</p>
+<p>B. 开放80端口</p>
+<p>firewall-cmd –zone&#x3D;public –add-port&#x3D;80&#x2F;tcp –permanent</p>
+<p>firewall-cmd –reload</p>
+<p><strong>4). 停止</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<p>停止之后，我们可以查看nginx的进程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep nginx</span><br></pre></td></tr></table></figure>
+
+<p><strong>5). 重新加载</strong></p>
+<p>当修改了Nginx配置文件后，需要重新加载才能生效，可以使用下面命令重新加载配置文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><p>在上述我们在使用nginx命令在进行服务的启动、停止、重新加载时，都需要用到一个指令nginx，而这个指令是在nginx&#x2F;sbin目录下的，我们每一次使用这个指令都需要切换到sbin目录才可以，使用相对繁琐。那么我们能不能在任意目录下都可以执行该指令来操作nginx呢？答案是可以的，配置nginx的环境变量即可。</p>
+<p>通过vim编辑器，打开&#x2F;etc&#x2F;profile文件, 在PATH环境变量中增加nginx的sbin目录，如下：</p>
+<p>修改完配置文件之后，需要执行 source &#x2F;etc&#x2F;profile 使文件生效。 接下来，我们就可以在任意目录下执行nginx的指令了，如：</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/02/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="prev" title="单例模式">
+                  <i class="fa fa-chevron-left"></i> 单例模式
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/03/%E8%B7%A8%E5%9F%9F%E8%81%94%E8%B0%83/" rel="next" title="跨域联调">
+                  跨域联调 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YangHaiyang</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
